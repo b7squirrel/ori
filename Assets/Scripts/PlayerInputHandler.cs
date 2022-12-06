@@ -5,8 +5,12 @@ public class PlayerInputHandler : MonoBehaviour
     public Vector2 MovementInput { get; private set; }
     public bool JumpInput { get; private set; }
 
+    [SerializeField] float inputHoldTime;
+    float jumpInputStartTime;
+
     void Update()
     {
+        CheckJumpInputHoldTime();
         GetMovementInput();
         Jump();
     }
@@ -19,7 +23,15 @@ public class PlayerInputHandler : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.W))
         {
             JumpInput = true;
+            jumpInputStartTime = Time.time;
         }
     }
     public void UseJumpInput() => JumpInput = false;
+    void CheckJumpInputHoldTime()
+    {
+        if (Time.time > jumpInputStartTime + inputHoldTime)
+        {
+            JumpInput = false;
+        }
+    }
 }

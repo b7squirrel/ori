@@ -6,6 +6,8 @@ public class PlayerInAirState : PlayerState
 {
     int xInput;
     bool isGrounded;
+    bool jumpInput;
+    bool coyoteTime;
 
     public PlayerInAirState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(player, stateMachine, playerData, animBoolName)
     {
@@ -36,11 +38,18 @@ public class PlayerInAirState : PlayerState
     {
         base.LogicUpdate();
 
+        CheckCoyoteTime();
+
         xInput = (int)player.InputHandler.MovementInput.x;
+        jumpInput = player.InputHandler.JumpInput;
 
         if (isGrounded && player.CurrentVelocity.y < 0)
         {
             stateMachine.ChangeState(player.LandState);
+        }
+        else if (jumpInput && player.JumpState.CanJump())
+        {
+            stateMachine.ChangeState(player.JumpState);
         }
         else
         {
@@ -53,4 +62,14 @@ public class PlayerInAirState : PlayerState
     {
         base.PhysicsUpdate();
     }
+    void CheckCoyoteTime()
+    {
+        if (coyoteTime && Time.time > startTime + playerData.coyoteTime)
+        {
+            coyoteTime = false;
+            player.JumpState.DecreaseAmountOfJumpsLeft();
+        }
+    }
+
+    public void StartCoyoteTime() => coyoteTime = true;
 }
