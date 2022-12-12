@@ -2,9 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Ability State는 State만 상속하므로 이동, Flip의 기능이 없다. 
+/// </summary>
 public class PlayerAbilityState : PlayerState
 {
-    protected bool isAbilityDone;
+    protected bool isAbilityDone; // Ability 상태가 끝나는 시점
     bool isGrounded;
 
     public PlayerAbilityState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(player, stateMachine, playerData, animBoolName)
@@ -23,16 +26,6 @@ public class PlayerAbilityState : PlayerState
         isAbilityDone = false;
     }
 
-    public override void Execute()
-    {
-        base.Execute();
-    }
-
-    public override void Exit()
-    {
-        base.Exit();
-    }
-
     public override void LogicUpdate()
     {
         base.LogicUpdate();
@@ -47,10 +40,5 @@ public class PlayerAbilityState : PlayerState
                 stateMachine.ChangeState(player.InAirState);
             }
         }
-    }
-
-    public override void PhysicsUpdate()
-    {
-        base.PhysicsUpdate();
     }
 }

@@ -16,7 +16,11 @@ MonoBehaviour:
   jumpVelocity: 17
   amountOfJumps: 2
   coyoteTime: 2
+  dashTime: 0.25
+  dashVelocity: 13
+  dashCoolDown: 0.3
   groundCheckRadius: 0.1
   whatIsGround:
     serializedVersion: 2
     m_Bits: 8
+  defaultGravityScale: 5

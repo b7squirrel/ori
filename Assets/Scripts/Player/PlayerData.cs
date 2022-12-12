@@ -15,7 +15,15 @@ public class PlayerData : ScriptableObject
     [Header("In Air State")]
     public float coyoteTime;
 
+    [Header("Dash State")]
+    public float dashTime; // 대쉬 애니메이션으 길이
+    public float dashVelocity;
+    public float dashCoolDown;
+
     [Header("Check Variables")]
     public float groundCheckRadius;
     public LayerMask whatIsGround;
+
+    [Header("Set Variables")]
+    public float defaultGravityScale;
 }

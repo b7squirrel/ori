@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     public PlayerJumpState JumpState { get; private set; }
     public PlayerLandState LandState { get; private set; }
     public PlayerInAirState InAirState { get; private set; }
+    public PlayerDashState DashState { get; private set; }
 
     [SerializeField] PlayerData playerData;
     #endregion
@@ -45,6 +46,7 @@ public class Player : MonoBehaviour
         JumpState = new PlayerJumpState(this, StateMachine, playerData, "PlayerJump");
         LandState = new PlayerLandState(this, StateMachine, playerData, "PlayerLand");
         InAirState = new PlayerInAirState(this, StateMachine, playerData, "PlayerFall");
+        DashState = new PlayerDashState(this, StateMachine, playerData, "PlayerDash");
 
         FacingDirection = 1;
     }
@@ -71,6 +73,10 @@ public class Player : MonoBehaviour
     {
         CurrentVelocity = new Vector2(Rb.velocity.x, newVelocity);
         Rb.velocity = CurrentVelocity;
+    }
+    public void SetGravity(float gravityScale)
+    {
+        Rb.gravityScale = gravityScale;
     }
     #endregion
 

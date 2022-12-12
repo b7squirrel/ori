@@ -29,10 +29,6 @@ public class PlayerState
         isAnimationFinished = false;
         startTime = Time.time;
     }
-    public virtual void Execute()
-    {
-
-    }
     public virtual void Exit()
     {
 

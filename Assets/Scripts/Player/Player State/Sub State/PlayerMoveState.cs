@@ -8,22 +8,6 @@ public class PlayerMoveState : PlayerGroundedState
     {
     }
 
-    public override void DoChecks()
-    {
-        base.DoChecks();
-    }
-
-    public override void Enter()
-    {
-        base.Enter();
-    }
-
-    public override void Execute()
-    {
-        base.Execute();
-        player.CheckIfshouldFlip(input);
-    }
-
     public override void Exit()
     {
         base.Exit();

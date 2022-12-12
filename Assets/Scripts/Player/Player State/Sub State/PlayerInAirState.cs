@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class PlayerInAirState : PlayerState
 {
+    //Input
     int xInput;
-    bool isGrounded;
     bool jumpInput;
+    bool dashInput;
+
+    //Checks
+    bool isGrounded;
+
     bool coyoteTime;
 
     public PlayerInAirState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(player, stateMachine, playerData, animBoolName)
@@ -19,21 +24,6 @@ public class PlayerInAirState : PlayerState
         isGrounded = player.CheckIfGrounded();
     }
 
-    public override void Enter()
-    {
-        base.Enter();
-    }
-
-    public override void Execute()
-    {
-        base.Execute();
-    }
-
-    public override void Exit()
-    {
-        base.Exit();
-    }
-
     public override void LogicUpdate()
     {
         base.LogicUpdate();
@@ -42,6 +32,7 @@ public class PlayerInAirState : PlayerState
 
         xInput = (int)player.InputHandler.MovementInput.x;
         jumpInput = player.InputHandler.JumpInput;
+        dashInput = player.InputHandler.DashInput;
 
         if (isGrounded && player.CurrentVelocity.y < 0)
         {
@@ -51,6 +42,10 @@ public class PlayerInAirState : PlayerState
         {
             stateMachine.ChangeState(player.JumpState);
         }
+        else if (dashInput && player.DashState.CheckIfCanDash())
+        {
+            stateMachine.ChangeState(player.DashState);
+        }
         else
         {
             player.CheckIfshouldFlip(player.InputHandler.MovementInput);
@@ -58,10 +53,6 @@ public class PlayerInAirState : PlayerState
         }
     }
 
-    public override void PhysicsUpdate()
-    {
-        base.PhysicsUpdate();
-    }
     void CheckCoyoteTime()
     {
         if (coyoteTime && Time.time > startTime + playerData.coyoteTime)

@@ -56,19 +56,21 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\PlayerRenderer.cs" />
-    <Compile Include="Assets\Scripts\PlayerInputHandler.cs" />
-    <Compile Include="Assets\Scripts\Player State\PlayerLandState.cs" />
-    <Compile Include="Assets\Scripts\Player State\PlayerAbilityState.cs" />
-    <Compile Include="Assets\Scripts\PlayerData.cs" />
-    <Compile Include="Assets\Scripts\Player State\PlayerGroundedState.cs" />
-    <Compile Include="Assets\Scripts\Player State\PlayerJumpState.cs" />
-    <Compile Include="Assets\Scripts\Player State\PlayerInAirState.cs" />
-    <Compile Include="Assets\Scripts\Player State\PlayerStateMachine.cs" />
-    <Compile Include="Assets\Scripts\Player State\PlayerMoveState.cs" />
-    <Compile Include="Assets\Scripts\Player.cs" />
-    <Compile Include="Assets\Scripts\Player State\PlayerState.cs" />
-    <Compile Include="Assets\Scripts\Player State\PlayerIdleState.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerRenderer.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerInputHandler.cs" />
+    <Compile Include="Assets\Scripts\Player\Player State\Sub State\PlayerLandState.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerAfterImageSprite.cs" />
+    <Compile Include="Assets\Scripts\Player\Player State\Suprer State\PlayerAbilityState.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerData.cs" />
+    <Compile Include="Assets\Scripts\Player\Player State\Suprer State\PlayerGroundedState.cs" />
+    <Compile Include="Assets\Scripts\Player\Player State\Sub State\PlayerJumpState.cs" />
+    <Compile Include="Assets\Scripts\Player\Player State\Sub State\PlayerInAirState.cs" />
+    <Compile Include="Assets\Scripts\Player\Player State\Sub State\PlayerStateMachine.cs" />
+    <Compile Include="Assets\Scripts\Player\Player State\Sub State\PlayerMoveState.cs" />
+    <Compile Include="Assets\Scripts\Player\Player State\Sub State\PlayerDashState.cs" />
+    <Compile Include="Assets\Scripts\Player\Player.cs" />
+    <Compile Include="Assets\Scripts\Player\Player State\Sub State\PlayerState.cs" />
+    <Compile Include="Assets\Scripts\Player\Player State\Sub State\PlayerIdleState.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
