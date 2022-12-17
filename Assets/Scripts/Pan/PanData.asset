@@ -9,18 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34db663ad8f46a8468c6d4fb95486b7c, type: 3}
-  m_Name: PlayerData
+  m_Script: {fileID: 11500000, guid: d333ae0d438a37c459c2edf34dccd63b, type: 3}
+  m_Name: PanData
   m_EditorClassIdentifier: 
-  movementVelocity: 10
-  jumpVelocity: 17
-  amountOfJumps: 2
-  coyoteTime: 2
-  dashTime: 0.28
-  dashVelocity: 13
-  dashCoolDown: 0.5
-  groundCheckRadius: 0.1
-  whatIsGround:
+  panCaptureTime: 0
+  panCaptureCoolTime: 1
+  whatIsCapturable:
     serializedVersion: 2
-    m_Bits: 8
-  defaultGravityScale: 5
+    m_Bits: 128

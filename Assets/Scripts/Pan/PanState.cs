@@ -1,10 +1,10 @@
 using UnityEngine;
 
-public class PlayerState
+public class PanState
 {
-    protected Player player;
-    protected PlayerStateMachine stateMachine;
-    protected PlayerData playerData;
+    protected Pan pan;
+    protected PanStateMachine stateMachine;
+    protected PanData pandata;
 
     protected bool isAnimationFinished;
 
@@ -12,19 +12,18 @@ public class PlayerState
 
     string animBoolName;
 
-    public PlayerState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName)
+    public PanState(Pan pan, PanStateMachine stateMachine, PanData panData, string animBoolName)
     {
-        this.player = player;
+        this.pan = pan;
         this.stateMachine = stateMachine;
-        this.playerData = playerData;
+        this.pandata = panData;
         this.animBoolName = animBoolName;
     }
 
     public virtual void Enter()
     {
         DoChecks();
-        player.anim.Play(animBoolName);
-        //Debug.Log(this.animBoolName);
+        pan.anim.Play(animBoolName);
         isAnimationFinished = false;
         startTime = Time.time;
     }
@@ -38,7 +37,7 @@ public class PlayerState
     }
     public virtual void PhysicsUpdate()
     {
-        
+
     }
     public virtual void DoChecks()
     {

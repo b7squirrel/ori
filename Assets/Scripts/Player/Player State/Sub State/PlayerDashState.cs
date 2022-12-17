@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerDashState : PlayerAbilityState
 {
     float dashTimeLeft;
-    float lastDashTime = -100f;
+    float lastDashTime = -100f; // 처음 시작 시에는 무조건 대시가 가능하도록
     float defaultGravityScale;
 
     public PlayerDashState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(player, stateMachine, playerData, animBoolName)
