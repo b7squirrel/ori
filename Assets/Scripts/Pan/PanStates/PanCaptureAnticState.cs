@@ -13,7 +13,6 @@ public class PanCaptureAnticState : PanState
     }
 
     // 시간 체크해서 애니메이션 끝나면 무조건 CapturedNone이나 CapturedRoll로 가도록
-
     public override void Enter()
     {
         base.Enter();
@@ -43,7 +42,6 @@ public class PanCaptureAnticState : PanState
         {
             pan.StateMachine.ChangeState(pan.CapturedNoneState);
         }
-
     }
 
     /// <summary>

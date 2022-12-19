@@ -17,6 +17,7 @@ public class PlayerIdleState : PlayerGroundedState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
+        player.CheckIfshouldFlip(input);
         if (input.x != 0)
         {
             stateMachine.ChangeState(player.MoveState);

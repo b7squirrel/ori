@@ -30,6 +30,8 @@ public class Player : MonoBehaviour
     #region Other Variables
     public Vector2 CurrentVelocity { get; private set; }
     public int FacingDirection { get; private set; }
+
+    PlayerMouseDirection playerMouseDirection;
     #endregion
 
     #region Unity CallBack Functions
@@ -37,6 +39,7 @@ public class Player : MonoBehaviour
     {
         Rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        playerMouseDirection = GetComponent<PlayerMouseDirection>();
         InputHandler = GetComponent<PlayerInputHandler>();
 
         StateMachine = new PlayerStateMachine();
@@ -87,8 +90,12 @@ public class Player : MonoBehaviour
     }
     public void CheckIfshouldFlip(Vector2 input)
     {
-        int xInput = (int)input.normalized.x;
-        if (xInput != 0 && xInput != FacingDirection)
+        //int xInput = (int)input.normalized.x;
+        //if (xInput != 0 && xInput != FacingDirection)
+        //{
+        //    Flip();
+        //}
+        if (FacingDirection != playerMouseDirection.GetMouseHorizontalDirection())
         {
             Flip();
         }

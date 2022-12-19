@@ -56,6 +56,7 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\ICapturable.cs" />
     <Compile Include="Assets\Scripts\Pan\PanStates\Super State\PanReadyState.cs" />
     <Compile Include="Assets\Scripts\Pan\Pan.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerRenderer.cs" />
@@ -83,12 +84,12 @@
     <Compile Include="Assets\Scripts\Pan\PanStates\PanCaptureAnticState.cs" />
     <Compile Include="Assets\Scripts\Pan\PanData.cs" />
     <Compile Include="Assets\Scripts\Player\Player State\Sub State\PlayerState.cs" />
+    <Compile Include="Assets\Scripts\EnemyHealth.cs" />
     <Compile Include="Assets\Scripts\Pan\PanSlot.cs" />
     <Compile Include="Assets\Scripts\Player\Player State\Sub State\PlayerIdleState.cs" />
     <Compile Include="Assets\Scripts\Pan\PanStates\PanPanningState.cs" />
     <Compile Include="Assets\Scripts\Pan\PanStates\PanIdleState.cs" />
-    <Compile Include="Assets\Scripts\ICapturable.cs" />
-    <Compile Include="Assets\Scripts\EnemyHealth.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerMouseDirection.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
