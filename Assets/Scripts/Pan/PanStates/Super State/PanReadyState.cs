@@ -28,6 +28,10 @@ public class PanReadyState : PanState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
-
+        captureInput = pan.PanInputHandler.CaptureInput;
+        if (captureInput && pan.CaptureAnticState.CheckIfCanCapture())
+        {
+            stateMachine.ChangeState(pan.CaptureAnticState);
+        }
     }
 }
