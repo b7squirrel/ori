@@ -31,7 +31,7 @@ public class Player : MonoBehaviour
     public Vector2 CurrentVelocity { get; private set; }
     public int FacingDirection { get; private set; }
 
-    PlayerMouseDirection playerMouseDirection;
+    public PlayerMouseDirection PlayerMouseDirection { get; private set; }
     #endregion
 
     #region Unity CallBack Functions
@@ -39,7 +39,7 @@ public class Player : MonoBehaviour
     {
         Rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        playerMouseDirection = GetComponent<PlayerMouseDirection>();
+        PlayerMouseDirection = GetComponent<PlayerMouseDirection>();
         InputHandler = GetComponent<PlayerInputHandler>();
 
         StateMachine = new PlayerStateMachine();
@@ -95,7 +95,7 @@ public class Player : MonoBehaviour
         //{
         //    Flip();
         //}
-        if (FacingDirection != playerMouseDirection.GetMouseHorizontalDirection())
+        if (FacingDirection != PlayerMouseDirection.GetMouseHorizontalDirection())
         {
             Flip();
         }

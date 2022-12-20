@@ -19,6 +19,15 @@ public class PlayerMoveState : PlayerGroundedState
 
         player.CheckIfshouldFlip(input);
 
+        if (player.InputHandler.MovementInput.x != player.PlayerMouseDirection.GetMouseHorizontalDirection())
+        {
+            player.anim.SetFloat("RunFB", 0f);
+        }
+        else
+        {
+            player.anim.SetFloat("RunFB", 1f);
+        }
+
         player.SetVelocityX(playerData.movementVelocity * input.x);
 
         if (input.x == 0)

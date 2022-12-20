@@ -59,6 +59,7 @@
     <Compile Include="Assets\Scripts\ICapturable.cs" />
     <Compile Include="Assets\Scripts\Pan\PanStates\Super State\PanReadyState.cs" />
     <Compile Include="Assets\Scripts\Pan\Pan.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerMouseDirection.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerRenderer.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerInputHandler.cs" />
     <Compile Include="Assets\Scripts\Player\Player State\Sub State\PlayerLandState.cs" />
@@ -89,7 +90,6 @@
     <Compile Include="Assets\Scripts\Player\Player State\Sub State\PlayerIdleState.cs" />
     <Compile Include="Assets\Scripts\Pan\PanStates\PanPanningState.cs" />
     <Compile Include="Assets\Scripts\Pan\PanStates\PanIdleState.cs" />
-    <Compile Include="Assets\Scripts\Player\PlayerMouseDirection.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
