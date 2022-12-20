@@ -22,5 +22,9 @@ public class PanCapturedRollState : PanCapturedState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
+        if (isAnimationFinished)
+        {
+            stateMachine.ChangeState(pan.PanningState);
+        }
     }
 }

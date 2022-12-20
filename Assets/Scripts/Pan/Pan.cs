@@ -43,5 +43,6 @@ public class Pan : MonoBehaviour
     {
         StateMachine.CurrentState.LogicUpdate();
     }
+    void AnimationFinishTrigger() => StateMachine.CurrentState.AnimationFinishTrigger();
 
 }

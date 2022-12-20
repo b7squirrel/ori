@@ -22,5 +22,10 @@ public class PanCapturedNoneState : PanCapturedState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
+        if (isAnimationFinished)
+        {
+            Debug.Log("Should be in Idle");
+            stateMachine.ChangeState(pan.IdleState);
+        }
     }
 }
