@@ -29,6 +29,7 @@ public class PlayerInAirState : PlayerState
         base.LogicUpdate();
 
         CheckCoyoteTime();
+        JumpFallAnimationToggle();
 
         xInput = (int)player.InputHandler.MovementInput.x;
         jumpInput = player.InputHandler.JumpInput;
@@ -59,6 +60,20 @@ public class PlayerInAirState : PlayerState
         {
             coyoteTime = false;
             player.JumpState.DecreaseAmountOfJumpsLeft();
+        }
+    }
+
+    void JumpFallAnimationToggle()
+    {
+        if (player.CurrentVelocity.y == 0f)
+            return;
+        if (player.CurrentVelocity.y < 0)
+        {
+            player.anim.Play("PlayerFall");
+        }
+        else if (player.CurrentVelocity.y > 0)
+        {
+            player.anim.Play("PlayerJump");
         }
     }
 

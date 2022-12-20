@@ -51,7 +51,8 @@ public class Player : MonoBehaviour
         InAirState = new PlayerInAirState(this, StateMachine, playerData, "PlayerFall");
         DashState = new PlayerDashState(this, StateMachine, playerData, "PlayerDash");
 
-        FacingDirection = 1;
+        FacingDirection = 1; // 플레이어가 항상 오른쪽을 바라본 채로 시작한다고 가정
+        anim.SetFloat("RunFB", 1f); // 시작 할 때 RunFB값이 Null이므로 적당한 값을 대입
     }
 
     void Start()

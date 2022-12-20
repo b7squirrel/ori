@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8f2324c665b9ee440a3b684c917f9963
+guid: 3bb6df724f3829f47aebfe00da910099
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -104,91 +104,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Player_DashTurn_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 64
-        width: 38
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2b1362e513ccc1b4fb99bd92ef12c330
-      internalID: -269683906
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player_DashTurn_1
-      rect:
-        serializedVersion: 2
-        x: 38
-        y: 64
-        width: 38
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b7c7091a9a3501448814fc974223b488
-      internalID: 1306272954
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player_DashTurn_2
-      rect:
-        serializedVersion: 2
-        x: 76
-        y: 64
-        width: 38
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8634e22729291154681f35d481577f91
-      internalID: -106904676
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player_DashTurn_3
-      rect:
-        serializedVersion: 2
-        x: 114
-        y: 64
-        width: 38
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ddfcb17f723558e4f81430a28bf7f5bc
-      internalID: 1733357005
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player_DashTurn_4
+      name: Player_Land_0
       rect:
         serializedVersion: 2
         x: 0
@@ -202,14 +118,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4a15a875a39defa4a8207bff4823d99a
-      internalID: -1348056088
+      spriteID: e24dde35c4ba92d4d809c5b7ea14f91d
+      internalID: 1335890045
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_DashTurn_5
+      name: Player_Land_1
       rect:
         serializedVersion: 2
         x: 38
@@ -223,14 +139,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 83eec51e25513794b86957cede438c50
-      internalID: 19098008
+      spriteID: d5c195a13fb11694aaa42f726ce431ec
+      internalID: -2033401074
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_DashTurn_6
+      name: Player_Land_2
       rect:
         serializedVersion: 2
         x: 76
@@ -244,35 +160,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e9835093e784e5f4d9d301cba47841ec
-      internalID: 404445963
+      spriteID: 6ef754c3371c5894db3ec15a7d439466
+      internalID: -46168605
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_DashTurn_7
-      rect:
-        serializedVersion: 2
-        x: 114
-        y: 32
-        width: 38
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d4e2db65c09db0c4e8a1256b523d9705
-      internalID: -222991930
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player_DashTurn_8
+      name: Player_Land_3
       rect:
         serializedVersion: 2
         x: 0
@@ -286,14 +181,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d2e7e526fa3dcab4b849134f694f0bd5
-      internalID: 870796663
+      spriteID: 148045aea9d7e464f962c05e0ff2667f
+      internalID: 1949121300
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_DashTurn_9
+      name: Player_Land_4
       rect:
         serializedVersion: 2
         x: 38
@@ -307,50 +202,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d2c30429298bd4b42bb6293060fc2a9f
-      internalID: 1768312399
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player_DashTurn_10
-      rect:
-        serializedVersion: 2
-        x: 76
-        y: 0
-        width: 38
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dca8df054f2ee5a409d10a14dc422aeb
-      internalID: -2130764264
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player_DashTurn_11
-      rect:
-        serializedVersion: 2
-        x: 114
-        y: 0
-        width: 38
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 565ef86e5270fcd45842839ec8ead8f4
-      internalID: -1349307535
+      spriteID: bf3ae382f2f1c224dbb448470764120e
+      internalID: 1265113977
       vertices: []
       indices: 
       edges: []
@@ -366,18 +219,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Player_DashTurn_5: 19098008
-      Player_DashTurn_1: 1306272954
-      Player_DashTurn_6: 404445963
-      Player_DashTurn_7: -222991930
-      Player_DashTurn_11: -1349307535
-      Player_DashTurn_4: -1348056088
-      Player_DashTurn_10: -2130764264
-      Player_DashTurn_9: 1768312399
-      Player_DashTurn_2: -106904676
-      Player_DashTurn_8: 870796663
-      Player_DashTurn_3: 1733357005
-      Player_DashTurn_0: -269683906
+      Player_Land_2: -46168605
+      Player_Land_3: 1949121300
+      Player_Land_0: 1335890045
+      Player_Land_4: 1265113977
+      Player_Land_1: -2033401074
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

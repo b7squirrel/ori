@@ -5,7 +5,6 @@ public class PlayerInputHandler : MonoBehaviour
     public Vector2 MovementInput { get; private set; }
     public bool JumpInput { get; private set; }
     public bool DashInput { get; private set; }
-    public bool DashInputStop { get; private set; }
 
     [SerializeField] float inputHoldTime;
 
@@ -34,15 +33,10 @@ public class PlayerInputHandler : MonoBehaviour
     }
     public void Dash()
     {
-        if (Input.GetKeyDown(KeyCode.S))
+        if (Input.GetKeyDown(KeyCode.S) && MovementInput.x != 0)
         {
         DashInput = true;
-        DashInputStop = false;
         dashInputStartTime = Time.time;
-        }
-        if (Input.GetKeyUp(KeyCode.S))
-        {
-            DashInputStop = true;
         }
     }
     public void UseJumpInput() => JumpInput = false;

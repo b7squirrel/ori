@@ -16,8 +16,8 @@ MonoBehaviour:
   jumpVelocity: 17
   amountOfJumps: 2
   coyoteTime: 2
-  dashTime: 0.35
-  dashVelocity: 13
+  dashTime: 0.23
+  dashVelocity: 18
   dashCoolDown: 0.5
   groundCheckRadius: 0.1
   whatIsGround:
