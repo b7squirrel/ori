@@ -14,6 +14,8 @@ public class Player : MonoBehaviour
     public PlayerDashState DashState { get; private set; }
 
     [SerializeField] PlayerData playerData;
+
+    public Pan Pan { get; private set; }
     #endregion
 
     #region Components
@@ -41,6 +43,7 @@ public class Player : MonoBehaviour
         anim = GetComponent<Animator>();
         PlayerMouseDirection = GetComponent<PlayerMouseDirection>();
         InputHandler = GetComponent<PlayerInputHandler>();
+        Pan = GetComponentInChildren<Pan>();
 
         StateMachine = new PlayerStateMachine();
 
@@ -50,6 +53,7 @@ public class Player : MonoBehaviour
         LandState = new PlayerLandState(this, StateMachine, playerData, "PlayerLand");
         InAirState = new PlayerInAirState(this, StateMachine, playerData, "PlayerFall");
         DashState = new PlayerDashState(this, StateMachine, playerData, "PlayerDash");
+
 
         FacingDirection = 1; // 플레이어가 항상 오른쪽을 바라본 채로 시작한다고 가정
         anim.SetFloat("RunFB", 1f); // 시작 할 때 RunFB값이 Null이므로 적당한 값을 대입
@@ -91,11 +95,6 @@ public class Player : MonoBehaviour
     }
     public void CheckIfshouldFlip(Vector2 input)
     {
-        //int xInput = (int)input.normalized.x;
-        //if (xInput != 0 && xInput != FacingDirection)
-        //{
-        //    Flip();
-        //}
         if (FacingDirection != PlayerMouseDirection.GetMouseHorizontalDirection())
         {
             Flip();

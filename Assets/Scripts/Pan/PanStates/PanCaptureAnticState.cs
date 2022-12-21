@@ -65,5 +65,4 @@ public class PanCaptureAnticState : PanState
     {
         // Capturable과 Capture Point 사이에 벽이 있는지 체크
     }
-    
 }

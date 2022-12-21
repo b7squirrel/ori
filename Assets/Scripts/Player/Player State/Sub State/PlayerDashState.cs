@@ -53,6 +53,13 @@ public class PlayerDashState : PlayerAbilityState
             player.SetVelocityX(playerData.dashVelocity * currentDashDirection); // Run 상태에서는 이동 방향으로 DashTurn
         }
         dashTimeLeft -= Time.deltaTime;
+
+        // Dash 도중에 캡쳐 가능
+        if (player.Pan.PanInputHandler.CaptureInput && player.Pan.CaptureAnticState.CheckIfCanCapture())
+        {
+            player.Pan.StateMachine.ChangeState(player.Pan.CaptureAnticState);
+            player.CheckIfshouldFlip(player.InputHandler.MovementInput);
+        }
     }
 
     public bool CheckIfCanDash() => Time.time >= lastDashTime + playerData.dashCoolDown;
