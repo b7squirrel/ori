@@ -44,3 +44,9 @@ TagManager:
   - name: Player
     uniqueID: 2536351563
     locked: 0
+  - name: Enemy
+    uniqueID: 3181908115
+    locked: 0
+  - name: Pan
+    uniqueID: 2774516405
+    locked: 0
