@@ -15,8 +15,7 @@ public class Pan : MonoBehaviour
 
     [SerializeField] PanData panData;
     public Transform capturePoint;
-    [field : SerializeField]
-    public Transform CaptureSlot { get; private set; }
+    
 
     public PanInputHandler PanInputHandler { get; private set; }
     public Animator anim;

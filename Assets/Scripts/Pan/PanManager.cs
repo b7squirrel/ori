@@ -4,15 +4,30 @@ using UnityEngine;
 
 public class PanManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public static PanManager instance;
+
+    [SerializeField] Transform captureSlot;
+
+    void Awake()
+    {
+        instance = this;
+    }
+
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void AcquireRoll(Roll.rollType rollType)
+    {
+        RollSo rollSo = RecipeRoll.instance.GetRollSo(rollType);
+
+        GameObject _roll = Instantiate(rollSo.rollPrefab, captureSlot.position, captureSlot.rotation);
+        _roll.transform.SetParent(captureSlot);
     }
 }

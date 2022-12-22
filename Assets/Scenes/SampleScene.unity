@@ -1692,7 +1692,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e83482d7a85a7d044814c9d38f1b913f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <RollType>k__BackingField: 1
+  rollType: 1
 --- !u!114 &1551200015
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2126,6 +2126,7 @@ GameObject:
   - component: {fileID: 2141050009}
   - component: {fileID: 2141050008}
   - component: {fileID: 2141050010}
+  - component: {fileID: 2141050011}
   m_Layer: 0
   m_Name: Pan
   m_TagString: Untagged
@@ -2214,3 +2215,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   recipeRoll:
   - {fileID: 11400000, guid: 97f60588fd154f44882d57ff3b2ffd0f, type: 2}
+--- !u!114 &2141050011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2141050005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d1d57376363b349bae7d6e276c3880, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  captureSlot: {fileID: 1506193301}

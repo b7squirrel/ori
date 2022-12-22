@@ -2,17 +2,11 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour, ICapturable
 {
-    [field: SerializeField]
-    public Roll.rollType RollType { get; private set; }
-    RollSo rollso;
+    [SerializeField] Roll.rollType rollType;
 
-    public void GetRolled(Transform captureSlot)
+    public void GetRolled()
     {
-        rollso = RecipeRoll.instance.GetRollSo(RollType);
-        GameObject rollPrefab = rollso.rollPrefab;
-
-        GameObject _roll = Instantiate(rollPrefab, captureSlot.position, captureSlot.rotation);
-        _roll.transform.SetParent(captureSlot);
+        PanManager.instance.AcquireRoll(rollType);
         Destroy(gameObject);
     }
 }
