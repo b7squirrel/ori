@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName ="newPlayerData", menuName ="Data/Player/Base Data")]
@@ -16,7 +14,7 @@ public class PlayerData : ScriptableObject
     public float coyoteTime;
 
     [Header("Dash State")]
-    public float dashTime; // 대쉬 애니메이션으 길이
+    public float dashTime; // 대쉬 애니메이션의 길이
     public float dashVelocity;
     public float dashCoolDown;
 
