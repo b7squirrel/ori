@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface ICapturable
 {
-    void GetRolled();
+    void GetRolled(Transform captureSlot);
 }

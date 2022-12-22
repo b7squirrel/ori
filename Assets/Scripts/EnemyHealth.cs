@@ -5,9 +5,8 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour, ICapturable
 {
     [SerializeField] GameObject roll;
-    [SerializeField] Transform captureSlot;
 
-    public void GetRolled()
+    public void GetRolled(Transform captureSlot)
     {
         GameObject _roll = Instantiate(roll, captureSlot.position, captureSlot.rotation);
         _roll.transform.SetParent(captureSlot);
