@@ -22,7 +22,6 @@ public class PanManager : MonoBehaviour
     void Start()
     {
         InitPanSlots();
-        CountRolls();
         captureSlot = panSlots[0].transform;
     }
 
@@ -63,6 +62,7 @@ public class PanManager : MonoBehaviour
     void InitPanSlots()
     {
         panSlots = GetComponentsInChildren<PanSlot>();
+        CountRolls();
     }
 
     void PushRolls()
@@ -81,5 +81,6 @@ public class PanManager : MonoBehaviour
                 panSlots[i].PushRoll(panSlots[i + 1]);
             }
         }
+        CountRolls();
     }
 }
