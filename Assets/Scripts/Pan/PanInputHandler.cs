@@ -13,6 +13,8 @@ public class PanInputHandler : MonoBehaviour
     {
         CheckCaptureInputHoldTime();
         Capture();
+        CheckHitRollInputHoldTime();
+        HitRoll();
     }
 
     public void Capture()
