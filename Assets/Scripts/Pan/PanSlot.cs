@@ -18,7 +18,13 @@ public class PanSlot : MonoBehaviour
 
     public void DumpRoll()
     {
-        Destroy(transform.GetChild(0).gameObject);
+        Rigidbody2D rb = GetRoll().AddComponent<Rigidbody2D>();
+        rb.AddForce(Vector2.up * 3f, ForceMode2D.Impulse);
+        rb.gravityScale = 5f;
+        BoxCollider2D boxCol = GetRoll().AddComponent<BoxCollider2D>();
+        boxCol.size = new Vector2(1f, .8f);
+
+        RemoveRoll();
     }
 
     public void RemoveRoll()
@@ -27,6 +33,9 @@ public class PanSlot : MonoBehaviour
         IsEmpty = true;
     }
 
+    /// <summary>
+    /// 롤을 다음 슬롯에 배치하고, 롤을 슬롯에서 제거하고(IsEmpty), 롤을 다음 슬롯에 Add하고, Sorting Order--
+    /// </summary>
     public void PushRoll(PanSlot targetSlot)
     {
         GameObject roll = GetRoll();

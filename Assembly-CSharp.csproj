@@ -95,6 +95,7 @@
     <Compile Include="Assets\Scripts\Enemy\Enemy.cs" />
     <Compile Include="Assets\Scripts\Enemy\Brick.cs" />
     <Compile Include="Assets\Scripts\Roll\RecipeRoll.cs" />
+    <Compile Include="Assets\Scripts\Managers\GameManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
