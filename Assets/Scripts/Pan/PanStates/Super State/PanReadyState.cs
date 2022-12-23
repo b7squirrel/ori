@@ -5,6 +5,7 @@ using UnityEngine;
 public class PanReadyState : PanState
 {
     bool captureInput;
+    bool hitRollInput;
 
     public PanReadyState(Pan pan, PanStateMachine stateMachine, PanData panData, string animBoolName) : base(pan, stateMachine, panData, animBoolName)
     {
@@ -29,9 +30,12 @@ public class PanReadyState : PanState
     {
         base.LogicUpdate();
         captureInput = pan.PanInputHandler.CaptureInput;
+        hitRollInput = pan.PanInputHandler.HitRollInput;
+
         if (captureInput && pan.CaptureAnticState.CheckIfCanCapture())
-        {
             stateMachine.ChangeState(pan.CaptureAnticState);
-        }
+
+        if (hitRollInput && pan.HitRollAnticState.CheckIfCanHitRoll())
+            stateMachine.ChangeState(pan.HitRollAnticState);
     }
 }
