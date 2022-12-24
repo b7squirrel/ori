@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3063836660029978974}
   - component: {fileID: 3063836660029978969}
+  - component: {fileID: 5979205332240281295}
   m_Layer: 0
   m_Name: Roll_Brick
   m_TagString: Untagged
@@ -72,7 +73,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1520450891
   m_SortingLayer: 3
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: f2b61582c4021d244ae196c06a12daac, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -84,3 +85,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5979205332240281295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3063836660029978975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4671fc6a44f8d0a4980c7dabd42f9f5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rollType: 1

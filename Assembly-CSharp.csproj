@@ -58,31 +58,38 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Enemy\ICapturable.cs" />
     <Compile Include="Assets\Scripts\Pan\PanStates\Super State\PanReadyState.cs" />
+    <Compile Include="Assets\Scripts\Roll\IPhysics.cs" />
     <Compile Include="Assets\Scripts\Pan\Pan.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMouseDirection.cs" />
-    <Compile Include="Assets\Scripts\Player\PlayerRenderer.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Brick.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerInputHandler.cs" />
     <Compile Include="Assets\Scripts\Player\Player State\Sub State\PlayerLandState.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerAfterImageSprite.cs" />
     <Compile Include="Assets\Scripts\Pan\PanStateMachine.cs" />
+    <Compile Include="Assets\Scripts\Roll\RollBrick.cs" />
     <Compile Include="Assets\Scripts\Player\Player State\Suprer State\PlayerAbilityState.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerData.cs" />
     <Compile Include="Assets\Scripts\Pan\PanManager.cs" />
     <Compile Include="Assets\Scripts\Pan\PanInputHandler.cs" />
     <Compile Include="Assets\Scripts\Player\Player State\Suprer State\PlayerGroundedState.cs" />
+    <Compile Include="Assets\Scripts\Managers\GameManager.cs" />
     <Compile Include="Assets\Scripts\Pan\PanStates\PanCapturedNoneState.cs" />
     <Compile Include="Assets\Scripts\Pan\PanStates\Super State\PanCapturedState.cs" />
     <Compile Include="Assets\Scripts\Player\Player State\Sub State\PlayerJumpState.cs" />
     <Compile Include="Assets\Scripts\Player\Player State\Sub State\PlayerInAirState.cs" />
     <Compile Include="Assets\Scripts\Pan\PanStates\PanHitRollState.cs" />
     <Compile Include="Assets\Scripts\Pan\PanStates\PanCapturedRollState.cs" />
+    <Compile Include="Assets\Scripts\Roll\RecipeRoll.cs" />
     <Compile Include="Assets\Scripts\Pan\PanState.cs" />
     <Compile Include="Assets\Scripts\Player\Player State\Sub State\PlayerStateMachine.cs" />
     <Compile Include="Assets\Scripts\Pan\PanStates\PanHitRollAnticState.cs" />
     <Compile Include="Assets\Scripts\Player\Player State\Sub State\PlayerMoveState.cs" />
     <Compile Include="Assets\Scripts\Player\Player State\Sub State\PlayerDashState.cs" />
+    <Compile Include="Assets\Scripts\Roll\RollSo.cs" />
+    <Compile Include="Assets\Scripts\Roll\Roll.cs" />
     <Compile Include="Assets\Scripts\Player\Player.cs" />
     <Compile Include="Assets\Scripts\Pan\PanStates\PanCaptureAnticState.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Enemy.cs" />
     <Compile Include="Assets\Scripts\Pan\PanData.cs" />
     <Compile Include="Assets\Scripts\Player\Player State\Sub State\PlayerState.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyHealth.cs" />
@@ -90,12 +97,7 @@
     <Compile Include="Assets\Scripts\Player\Player State\Sub State\PlayerIdleState.cs" />
     <Compile Include="Assets\Scripts\Pan\PanStates\PanPanningState.cs" />
     <Compile Include="Assets\Scripts\Pan\PanStates\PanIdleState.cs" />
-    <Compile Include="Assets\Scripts\Roll\Roll.cs" />
-    <Compile Include="Assets\Scripts\Roll\RollSo.cs" />
-    <Compile Include="Assets\Scripts\Enemy\Enemy.cs" />
-    <Compile Include="Assets\Scripts\Enemy\Brick.cs" />
-    <Compile Include="Assets\Scripts\Roll\RecipeRoll.cs" />
-    <Compile Include="Assets\Scripts\Managers\GameManager.cs" />
+    <Compile Include="Assets\Scripts\Roll\RollGen.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

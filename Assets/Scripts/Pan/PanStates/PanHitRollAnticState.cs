@@ -13,15 +13,18 @@ public class PanHitRollAnticState : PanState
     {
         base.Enter();
         lastHitRollTime = Time.time;
-        Debug.Log("Entered Hit Roll Antic State");
     }
     public override void LogicUpdate()
     {
         base.LogicUpdate();
         if (isAnimationFinished)
         {
-
+            stateMachine.ChangeState(pan.HitRollState);
         }
+    }
+    public override void Exit()
+    {
+        base.Exit();
     }
 
     /// <summary>

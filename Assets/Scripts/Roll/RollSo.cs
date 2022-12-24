@@ -5,6 +5,7 @@ public class RollSo : ScriptableObject
 {
     public Roll.rollType rollType;
     public GameObject rollPrefab;
+    public Vector2 velocity;
     //public float height;
     //public float mass;
     //public float gravity;

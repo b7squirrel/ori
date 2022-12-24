@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PanManager : MonoBehaviour
@@ -14,6 +12,7 @@ public class PanManager : MonoBehaviour
     [SerializeField] PanSlot[] panSlots;
     [SerializeField] bool[] isEmpty = new bool[3];
 
+    #region Unity CallBack Functions
     void Awake()
     {
         instance = this;
@@ -32,7 +31,14 @@ public class PanManager : MonoBehaviour
             isEmpty[i] = panSlots[i].IsEmpty;
         }
     }
+    #endregion
 
+    #region Slot Actions
+    void InitPanSlots()
+    {
+        panSlots = GetComponentsInChildren<PanSlot>();
+        CountRolls();
+    }
     public void AcquireRoll(Roll.rollType rollType)
     {
         PushRolls();
@@ -45,26 +51,6 @@ public class PanManager : MonoBehaviour
 
         CountRolls();
     }
-
-    void CountRolls()
-    {
-        for (int i = 0; i < panSlots.Length; i++)
-        {
-            if (panSlots[i].IsEmpty)
-            {
-                NumberOfRolls = i;
-                return;
-            }
-        }
-        NumberOfRolls = panSlots.Length;
-    }
-
-    void InitPanSlots()
-    {
-        panSlots = GetComponentsInChildren<PanSlot>();
-        CountRolls();
-    }
-
     void PushRolls()
     {
         //꼭대기 슬롯 정리
@@ -78,9 +64,54 @@ public class PanManager : MonoBehaviour
         {
             if (panSlots[i].IsEmpty == false)
             {
-                panSlots[i].PushRoll(panSlots[i + 1]);
+                panSlots[i].MoveRoll(panSlots[i + 1]);
             }
         }
+        UpdateSlots();
+    }
+    void PullRolls()
+    {
+        for (int i = 0; i < panSlots.Length - 1; i++)
+        {
+            panSlots[i + 1].MoveRoll(panSlots[i]);
+        }
+        UpdateSlots();
+    }
+
+    public void ReleaseRoll()
+    {
+        panSlots[0].ReleaseRoll();
+        PullRolls();
+    }
+    #endregion
+
+    #region Update Slots
+    void UpdateSlots()
+    {
+        SetSortingLayers();
         CountRolls();
     }
+    void SetSortingLayers()
+    {
+        for (int i = 0; i < panSlots.Length; i++)
+        {
+            if (panSlots[i].IsEmpty == false)
+            {
+                panSlots[i].GetRoll().GetComponent<SpriteRenderer>().sortingOrder = i;
+            }
+        }
+    }
+    void CountRolls()
+    {
+        for (int i = 0; i < panSlots.Length; i++)
+        {
+            if (panSlots[i].IsEmpty)
+            {
+                NumberOfRolls = i;
+                return;
+            }
+        }
+        NumberOfRolls = panSlots.Length;
+    }
+    #endregion
 }
