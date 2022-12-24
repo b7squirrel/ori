@@ -38,7 +38,6 @@ public class PanSlot : MonoBehaviour
         roll.transform.SetPositionAndRotation(targetSlot.transform.position, targetSlot.transform.rotation);
         RemoveRoll();
         targetSlot.AddRoll(roll.transform);
-        roll.GetComponent<SpriteRenderer>().sortingOrder--;
     }
     public void ReleaseRoll()
     {

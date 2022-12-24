@@ -14,4 +14,20 @@ public class PanHitRollState : PanState
         base.Enter();
         PanManager.instance.ReleaseRoll();
     }
+
+    public override void LogicUpdate()
+    {
+        base.LogicUpdate();
+        if (isAnimationFinished == false)
+            return;
+
+        if (PanManager.instance.NumberOfRolls == 0)
+        {
+            stateMachine.ChangeState(pan.IdleState);
+        }
+        else
+        {
+            stateMachine.ChangeState(pan.PanningState);
+        }
+    }
 }

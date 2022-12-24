@@ -73,7 +73,10 @@ public class PanManager : MonoBehaviour
     {
         for (int i = 0; i < panSlots.Length - 1; i++)
         {
-            panSlots[i + 1].MoveRoll(panSlots[i]);
+            if (panSlots[i + 1].IsEmpty == false)
+            {
+                panSlots[i + 1].MoveRoll(panSlots[i]);
+            }
         }
         UpdateSlots();
     }

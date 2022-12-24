@@ -22,11 +22,6 @@ public class PanHitRollAnticState : PanState
             stateMachine.ChangeState(pan.HitRollState);
         }
     }
-    public override void Exit()
-    {
-        base.Exit();
-    }
-
     /// <summary>
     /// 쿨타임이 찼는지 확인
     /// </summary>

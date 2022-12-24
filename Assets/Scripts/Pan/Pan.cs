@@ -15,10 +15,9 @@ public class Pan : MonoBehaviour
 
     [SerializeField] PanData panData;
     public Transform capturePoint;
-    
-
     public PanInputHandler PanInputHandler { get; private set; }
     public Animator anim;
+    [SerializeField] string currentState;
 
     void Awake()
     {
@@ -43,6 +42,7 @@ public class Pan : MonoBehaviour
     void Update()
     {
         StateMachine.CurrentState.LogicUpdate();
+        currentState = StateMachine.CurrentState.ToString();
     }
     void AnimationFinishTrigger() => StateMachine.CurrentState.AnimationFinishTrigger();
 
