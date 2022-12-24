@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rollType: 1
   rollPrefab: {fileID: 3063836660029978975, guid: 6a13fed73682e9e4b86d549e6738c44d, type: 3}
+  velocity: {x: 10, y: 5}

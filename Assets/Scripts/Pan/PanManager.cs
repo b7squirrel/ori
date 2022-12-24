@@ -65,6 +65,7 @@ public class PanManager : MonoBehaviour
             if (panSlots[i].IsEmpty == false)
             {
                 panSlots[i].MoveRoll(panSlots[i + 1]);
+                Debug.Log("Moved Roll in Slot[" + i + "] to Slot[" + (i + 1) + "]");
             }
         }
         UpdateSlots();
