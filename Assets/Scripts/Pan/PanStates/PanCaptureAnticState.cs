@@ -55,7 +55,7 @@ public class PanCaptureAnticState : PanState
         if (hit != null)
         {
             capturedRoll = true;
-            hit.gameObject.GetComponent<ICapturable>().GetRolled();
+            hit.gameObject.GetComponent<ICapturable>().GetCaptured();
         }
         else
         {

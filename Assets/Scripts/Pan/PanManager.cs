@@ -33,12 +33,7 @@ public class PanManager : MonoBehaviour
     }
     #endregion
 
-    #region Slot Actions
-    void InitPanSlots()
-    {
-        panSlots = GetComponentsInChildren<PanSlot>();
-        CountRolls();
-    }
+    #region Acquire Rolls or Flavour
     public void AcquireRoll(Roll.rollType rollType)
     {
         PushRolls();
@@ -49,6 +44,18 @@ public class PanManager : MonoBehaviour
         GameObject _roll = Instantiate(rollSo.rollPrefab, captureSlot.position, captureSlot.rotation);
         panSlots[0].AddRoll(_roll.transform);
 
+        CountRolls();
+    }
+    public void AcquireFlavour(Flavour.flavourType flavourType)
+    {
+
+    }
+    #endregion
+
+    #region Slot Actions
+    void InitPanSlots()
+    {
+        panSlots = GetComponentsInChildren<PanSlot>();
         CountRolls();
     }
     void PushRolls()

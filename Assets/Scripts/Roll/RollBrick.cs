@@ -33,11 +33,5 @@ public class RollBrick : RollGen, IPhysics
         Vector2 velocity = RecipeRoll.instance.GetRollSo(rollType).velocity;
         rb.AddForce(new Vector2(velocity.x * xDir, velocity.y), ForceMode2D.Impulse);
     }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Enemy"))
-        {
-            collision.GetComponent<EnemyHealth>().TakeDamage();
-        }
-    }
+    
 }

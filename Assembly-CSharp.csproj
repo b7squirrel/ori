@@ -80,14 +80,14 @@
     <Compile Include="Assets\Scripts\Player\Player State\Sub State\PlayerInAirState.cs" />
     <Compile Include="Assets\Scripts\Pan\PanStates\PanHitRollState.cs" />
     <Compile Include="Assets\Scripts\Pan\PanStates\PanCapturedRollState.cs" />
-    <Compile Include="Assets\Scripts\Roll\RecipeRoll.cs" />
+    <Compile Include="Assets\Scripts\Roll\BaseSetting\RecipeRoll.cs" />
     <Compile Include="Assets\Scripts\Pan\PanState.cs" />
     <Compile Include="Assets\Scripts\Player\Player State\Sub State\PlayerStateMachine.cs" />
     <Compile Include="Assets\Scripts\Pan\PanStates\PanHitRollAnticState.cs" />
     <Compile Include="Assets\Scripts\Player\Player State\Sub State\PlayerMoveState.cs" />
     <Compile Include="Assets\Scripts\Player\Player State\Sub State\PlayerDashState.cs" />
-    <Compile Include="Assets\Scripts\Roll\RollSo.cs" />
-    <Compile Include="Assets\Scripts\Roll\Roll.cs" />
+    <Compile Include="Assets\Scripts\Roll\BaseSetting\RollSo.cs" />
+    <Compile Include="Assets\Scripts\Roll\BaseSetting\Roll.cs" />
     <Compile Include="Assets\Scripts\Player\Player.cs" />
     <Compile Include="Assets\Scripts\Pan\PanStates\PanCaptureAnticState.cs" />
     <Compile Include="Assets\Scripts\Enemy\Enemy.cs" />
@@ -99,6 +99,9 @@
     <Compile Include="Assets\Scripts\Pan\PanStates\PanPanningState.cs" />
     <Compile Include="Assets\Scripts\Pan\PanStates\PanIdleState.cs" />
     <Compile Include="Assets\Scripts\Enemy\IDamageable.cs" />
+    <Compile Include="Assets\Scripts\Roll\BaseSetting\FlavourSo.cs" />
+    <Compile Include="Assets\Scripts\Roll\BaseSetting\Flavour.cs" />
+    <Compile Include="Assets\Scripts\Enemy\ProjectileHealth.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

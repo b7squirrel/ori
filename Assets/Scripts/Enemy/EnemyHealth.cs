@@ -4,7 +4,7 @@ public class EnemyHealth : MonoBehaviour, ICapturable, IDamageable
 {
     [SerializeField] Roll.rollType rollType;
 
-    public void GetRolled()
+    public void GetCaptured()
     {
         PanManager.instance.AcquireRoll(rollType);
         Destroy(gameObject);
