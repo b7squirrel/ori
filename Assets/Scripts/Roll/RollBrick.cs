@@ -14,6 +14,7 @@ public class RollBrick : RollGen, IPhysics
         rb.gravityScale = 5f;
         BoxCollider2D boxCol = this.gameObject.AddComponent<BoxCollider2D>();
         boxCol.size = new Vector2(1f, .8f);
+        Destroy(gameObject, .3f);
     }
     /// <summary>
     /// 리지드바디, 콜라이더 씌우고, 마우스 방향, 롤의 속도 데이터 방향으로 던짐

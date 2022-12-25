@@ -36,6 +36,11 @@ public class PanReadyState : PanState
             stateMachine.ChangeState(pan.CaptureAnticState);
 
         if (hitRollInput && pan.HitRollAnticState.CheckIfCanHitRoll())
+        {
+            if (PanManager.instance.NumberOfRolls == 0)
+                return;
+
             stateMachine.ChangeState(pan.HitRollAnticState);
+        }
     }
 }

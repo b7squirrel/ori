@@ -19,7 +19,6 @@ public class PanSlot : MonoBehaviour
     public void DumpRoll()
     {
         GetRoll().GetComponent<IPhysics>().AddDumpRollPhysics();
-
         RemoveRoll();
     }
 

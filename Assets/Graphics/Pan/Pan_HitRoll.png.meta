@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ddeaab0057b143e458c711783df15c0f
+guid: 0bac946aa835b934699cbee436267439
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -66,7 +66,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 256
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -104,85 +104,190 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Player-Fall_0
+      name: Pan_HitRoll_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 98
+        width: 80
+        height: 49
+      alignment: 9
+      pivot: {x: 53, y: 15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff8dbaa1dfdc7e3458456d162df4412f
+      internalID: -1625314235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pan_HitRoll_1
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 98
+        width: 80
+        height: 49
+      alignment: 9
+      pivot: {x: 0.6625, y: 0.30612245}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 192be3446fcc69e488461963b6e4cfd6
+      internalID: -1672688112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pan_HitRoll_2
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 98
+        width: 80
+        height: 49
+      alignment: 9
+      pivot: {x: 0.6625, y: 0.30612245}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5748a0c4849e33428199c48fb800f3c
+      internalID: 984165856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pan_HitRoll_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 49
+        width: 80
+        height: 49
+      alignment: 9
+      pivot: {x: 0.6625, y: 0.30612245}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 541a661c3bbb6e54e8542a91bb636de8
+      internalID: -1346051057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pan_HitRoll_4
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 49
+        width: 80
+        height: 49
+      alignment: 9
+      pivot: {x: 0.6625, y: 0.30612245}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49157e2616257fc479a8e1ad311d07f0
+      internalID: -1236832723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pan_HitRoll_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 49
+        width: 80
+        height: 49
+      alignment: 9
+      pivot: {x: 0.6625, y: 0.30612245}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 200b4d3ea7e60c24eabb8f2c4509f9f7
+      internalID: -1350228318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pan_HitRoll_6
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 48
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 80
+        height: 49
+      alignment: 9
+      pivot: {x: 0.6625, y: 0.30612245}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 851687a502c500b4794950cc86ef8f09
-      internalID: 560765387
+      spriteID: 5bd7e240682d47b4395d74958bfa9809
+      internalID: 1005202496
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player-Fall_1
+      name: Pan_HitRoll_7
       rect:
         serializedVersion: 2
-        x: 48
+        x: 80
         y: 0
-        width: 48
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 80
+        height: 49
+      alignment: 9
+      pivot: {x: 0.6625, y: 0.30612245}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d300125ab3ac85845908c4d9b0aeaea8
-      internalID: 344025192
+      spriteID: 933a3c13645fb6f4e9aa1badcd93871f
+      internalID: -1018141863
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player-Fall_2
+      name: Pan_HitRoll_8
       rect:
         serializedVersion: 2
-        x: 96
+        x: 160
         y: 0
-        width: 48
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 80
+        height: 49
+      alignment: 9
+      pivot: {x: 0.6625, y: 0.30612245}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 780865710e1a8fb43b9ae399954b7da4
-      internalID: -611927675
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player-Fall_3
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 0
-        width: 48
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2a12c4d7b277d434faee8cc810ad3966
-      internalID: 1100170315
+      spriteID: d7fb862d0ed22b74fb9f579df214f687
+      internalID: 1608738621
       vertices: []
       indices: 
       edges: []
@@ -198,10 +303,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Player-Fall_3: 1100170315
-      Player-Fall_1: 344025192
-      Player-Fall_0: 560765387
-      Player-Fall_2: -611927675
+      Pan_HitRoll_0: -1625314235
+      Pan_HitRoll_5: -1350228318
+      Pan_HitRoll_4: -1236832723
+      Pan_HitRoll_6: 1005202496
+      Pan_HitRoll_2: 984165856
+      Pan_HitRoll_7: -1018141863
+      Pan_HitRoll_1: -1672688112
+      Pan_HitRoll_8: 1608738621
+      Pan_HitRoll_3: -1346051057
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

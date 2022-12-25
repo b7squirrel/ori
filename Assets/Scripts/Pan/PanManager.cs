@@ -101,7 +101,7 @@ public class PanManager : MonoBehaviour
         {
             if (panSlots[i].IsEmpty == false)
             {
-                panSlots[i].GetRoll().GetComponent<SpriteRenderer>().sortingOrder = i;
+                panSlots[i].GetRoll().GetComponent<SpriteRenderer>().sortingOrder = panSlots.Length - i;
             }
         }
     }
