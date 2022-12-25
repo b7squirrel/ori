@@ -13,7 +13,7 @@ public class PanSlot : MonoBehaviour
 
     public GameObject GetRoll()
     {
-        return transform.GetChild(0).gameObject;
+        return transform.GetComponentInChildren<RollGen>().gameObject;
     }
 
     public void DumpRoll()

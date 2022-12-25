@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23f498008d2e54a47b6397d6ffc269f2, type: 3}
   m_Name: FlavourSo_Fire
   m_EditorClassIdentifier: 
-  flavourType: 0
+  flavourType: 1
+  flavourPrefab: {fileID: 4200844720415493156, guid: 7373637ee392a424c9f07d5da4178b4f, type: 3}

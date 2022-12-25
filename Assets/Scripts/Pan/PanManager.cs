@@ -12,6 +12,8 @@ public class PanManager : MonoBehaviour
     [SerializeField] PanSlot[] panSlots;
     [SerializeField] bool[] isEmpty = new bool[3];
 
+    Flavour.flavourType flavourType;
+
     #region Unity CallBack Functions
     void Awake()
     {
@@ -48,7 +50,15 @@ public class PanManager : MonoBehaviour
     }
     public void AcquireFlavour(Flavour.flavourType flavourType)
     {
+        this.flavourType = flavourType;
 
+        FlavourSo flavourSo = RecipeFlavour.instance.GetFlavourSo(flavourType);
+        foreach (var item in panSlots)
+        {
+            Transform targetTransform = item.transform;
+            GameObject _flavour = Instantiate(flavourSo.flavourPrefab, targetTransform.position, targetTransform.rotation);
+            _flavour.transform.SetParent(targetTransform);
+        }
     }
     #endregion
 
@@ -72,7 +82,6 @@ public class PanManager : MonoBehaviour
             if (panSlots[i].IsEmpty == false)
             {
                 panSlots[i].MoveRoll(panSlots[i + 1]);
-                Debug.Log("Moved Roll in Slot[" + i + "] to Slot[" + (i + 1) + "]");
             }
         }
         UpdateSlots();

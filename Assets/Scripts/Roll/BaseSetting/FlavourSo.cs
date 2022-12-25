@@ -4,4 +4,5 @@ using UnityEngine;
 public class FlavourSo : ScriptableObject
 {
     public Flavour.flavourType flavourType;
+    public GameObject flavourPrefab;
 }
