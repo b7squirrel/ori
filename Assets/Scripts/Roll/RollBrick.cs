@@ -13,7 +13,7 @@ public class RollBrick : RollGen, IPhysics
         rb.AddForce(Vector2.up * 3f, ForceMode2D.Impulse);
         rb.gravityScale = 5f;
         BoxCollider2D boxCol = this.gameObject.AddComponent<BoxCollider2D>();
-        boxCol.size = new Vector2(1f, .8f);
+        boxCol.size = new Vector2(1.6f, 1.3f);
         Destroy(gameObject, .3f);
     }
     /// <summary>
@@ -25,9 +25,19 @@ public class RollBrick : RollGen, IPhysics
         rb.AddForce(Vector2.up * 3f, ForceMode2D.Impulse);
         rb.gravityScale = 5f;
         BoxCollider2D boxCol = this.gameObject.AddComponent<BoxCollider2D>();
-        boxCol.size = new Vector2(1f, .8f);
+        boxCol.size = new Vector2(1.6f, 1.3f);
+        BoxCollider2D boxColTrg = this.gameObject.AddComponent<BoxCollider2D>();
+        boxColTrg.size = new Vector2(1.7f, 1.4f);
+        boxColTrg.isTrigger = true;
 
         Vector2 velocity = RecipeRoll.instance.GetRollSo(rollType).velocity;
         rb.AddForce(new Vector2(velocity.x * xDir, velocity.y), ForceMode2D.Impulse);
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Enemy"))
+        {
+            collision.GetComponent<EnemyHealth>().TakeDamage();
+        }
     }
 }

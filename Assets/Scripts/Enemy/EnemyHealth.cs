@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EnemyHealth : MonoBehaviour, ICapturable
+public class EnemyHealth : MonoBehaviour, ICapturable, IDamageable
 {
     [SerializeField] Roll.rollType rollType;
 
@@ -8,5 +8,9 @@ public class EnemyHealth : MonoBehaviour, ICapturable
     {
         PanManager.instance.AcquireRoll(rollType);
         Destroy(gameObject);
+    }
+    public void TakeDamage()
+    {
+        Debug.Log("Take Damage");
     }
 }
