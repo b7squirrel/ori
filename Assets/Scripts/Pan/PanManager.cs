@@ -126,7 +126,11 @@ public class PanManager : MonoBehaviour
         FlavourSo flavourSo = GetFlavourSo(this.flavourType);
         GameObject flavourPrefab = Instantiate(flavourSo.flavourPrefab, roll.position, roll.rotation);
         flavourPrefab.transform.SetParent(panSlots[0].GetRoll().transform);
-        panSlots[0].GetRoll().GetComponent<RollHealth>().FlavourType = this.flavourType;
+
+        RollHealth rollHealth = panSlots[0].GetRoll().GetComponent<RollHealth>();
+
+        rollHealth.CountLife();
+        rollHealth.FlavourType = this.flavourType;
 
         panSlots[0].ReleaseRoll();
         PullRolls();

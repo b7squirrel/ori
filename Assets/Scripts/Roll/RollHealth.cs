@@ -19,7 +19,9 @@ public class RollHealth : MonoBehaviour, ICapturable
 
     public IEnumerator CountLifeCo()
     {
-        throw new System.NotImplementedException();
+        yield return new WaitForSeconds(lifeTime);
+        GetComponent<IRollAction>().RollAction();
+        Destroy(gameObject);
     }
 
     public void GetCaptured()
@@ -31,5 +33,4 @@ public class RollHealth : MonoBehaviour, ICapturable
         }
         Destroy(gameObject);
     }
-    
 }

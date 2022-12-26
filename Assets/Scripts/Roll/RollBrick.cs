@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class RollBrick : RollGen, IPhysics
+public class RollBrick : RollGen, IPhysics, IRollAction
 {
     #region Physics Functions
     /// <summary>
@@ -32,5 +32,11 @@ public class RollBrick : RollGen, IPhysics
         Vector2 velocity = RecipeRoll.instance.GetRollSo(GetComponent<RollHealth>().RollType).velocity;
         rb.AddForce(new Vector2(velocity.x * xDir, velocity.y), ForceMode2D.Impulse);
     }
+
     #endregion
+
+    public void RollAction()
+    {
+        Debug.Log("Æø¹ß");
+    }
 }
