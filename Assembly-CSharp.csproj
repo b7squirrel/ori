@@ -63,9 +63,7 @@
     <Compile Include="Assets\Scripts\Player\PlayerMouseDirection.cs" />
     <Compile Include="Assets\Scripts\Enemy\Brick.cs" />
     <Compile Include="Assets\Scripts\Roll\RollGen.cs" />
-    <Compile Include="Assets\Scripts\Roll\FlavourHealth.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerInputHandler.cs" />
-    <Compile Include="Assets\Scripts\Roll\IFlavourAction.cs" />
     <Compile Include="Assets\Scripts\Player\Player State\Sub State\PlayerLandState.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerAfterImageSprite.cs" />
     <Compile Include="Assets\Scripts\Pan\PanStateMachine.cs" />
@@ -75,7 +73,6 @@
     <Compile Include="Assets\Scripts\Pan\PanManager.cs" />
     <Compile Include="Assets\Scripts\Pan\PanInputHandler.cs" />
     <Compile Include="Assets\Scripts\Player\Player State\Suprer State\PlayerGroundedState.cs" />
-    <Compile Include="Assets\Scripts\Roll\FlavourGen.cs" />
     <Compile Include="Assets\Scripts\Managers\GameManager.cs" />
     <Compile Include="Assets\Scripts\Pan\PanStates\PanCapturedNoneState.cs" />
     <Compile Include="Assets\Scripts\Pan\PanStates\Super State\PanCapturedState.cs" />
@@ -91,7 +88,6 @@
     <Compile Include="Assets\Scripts\Roll\BaseSetting\Flavour.cs" />
     <Compile Include="Assets\Scripts\Pan\PanStates\PanHitRollAnticState.cs" />
     <Compile Include="Assets\Scripts\Player\Player State\Sub State\PlayerMoveState.cs" />
-    <Compile Include="Assets\Scripts\Roll\FlavourFire.cs" />
     <Compile Include="Assets\Scripts\Player\Player State\Sub State\PlayerDashState.cs" />
     <Compile Include="Assets\Scripts\Roll\BaseSetting\RollSo.cs" />
     <Compile Include="Assets\Scripts\Roll\BaseSetting\Roll.cs" />
