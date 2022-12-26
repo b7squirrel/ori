@@ -45,5 +45,6 @@ public class Pan : MonoBehaviour
         currentState = StateMachine.CurrentState.ToString();
     }
     void AnimationFinishTrigger() => StateMachine.CurrentState.AnimationFinishTrigger();
+    void AniamtionCancelFlag() => StateMachine.CurrentState.AnimationCancelFlag();
 
 }

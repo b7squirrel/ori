@@ -7,6 +7,7 @@ public class PanState
     protected PanData pandata;
 
     protected bool isAnimationFinished;
+    protected bool canCancelAniamtion;
 
     protected float startTime;
 
@@ -25,6 +26,7 @@ public class PanState
         DoChecks();
         pan.anim.Play(animBoolName);
         isAnimationFinished = false;
+        canCancelAniamtion = false;
         startTime = Time.time;
     }
     public virtual void Exit()
@@ -48,4 +50,5 @@ public class PanState
 
     }
     public virtual void AnimationFinishTrigger() => isAnimationFinished = true;
+    public virtual void AnimationCancelFlag() => canCancelAniamtion = true;
 }

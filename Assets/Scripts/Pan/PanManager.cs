@@ -214,8 +214,8 @@ public class PanManager : MonoBehaviour
     {
         yield return new WaitForSeconds(pandata.flavourLife);
         isFlavoured = false;
+        flavourType = Flavour.flavourType.none;
         DestroyFlavourPrefab();
-        Debug.Log("Destroyed flavour Prefabs");
     }
     void DebugSlot()
     {
