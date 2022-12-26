@@ -29,7 +29,7 @@ public class RollBrick : RollGen, IPhysics
         boxColTrg.size = new Vector2(1.7f, 1.4f);
         boxColTrg.isTrigger = true;
 
-        Vector2 velocity = RecipeRoll.instance.GetRollSo(rollType).velocity;
+        Vector2 velocity = RecipeRoll.instance.GetRollSo(RollType).velocity;
         rb.AddForce(new Vector2(velocity.x * xDir, velocity.y), ForceMode2D.Impulse);
     }
     #endregion

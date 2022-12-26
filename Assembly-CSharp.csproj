@@ -105,6 +105,7 @@
     <Compile Include="Assets\Scripts\Roll\BaseSetting\RecipeFlavour.cs" />
     <Compile Include="Assets\Scripts\Roll\IFlavourAction.cs" />
     <Compile Include="Assets\Scripts\Roll\IRollAction.cs" />
+    <Compile Include="Assets\Scripts\Roll\RollHealth.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

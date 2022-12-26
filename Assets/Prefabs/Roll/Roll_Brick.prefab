@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 3063836660029978974}
   - component: {fileID: 3063836660029978969}
   - component: {fileID: 5979205332240281295}
-  m_Layer: 0
+  - component: {fileID: 56034497188748575}
+  m_Layer: 7
   m_Name: Roll_Brick
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,5 +98,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4671fc6a44f8d0a4980c7dabd42f9f5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rollType: 1
   life: 4
+  <RollType>k__BackingField: 1
+--- !u!114 &56034497188748575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3063836660029978975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfae7b85be4cd31448e9d63ade8a0cf5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -8,7 +8,8 @@ public class RollGen : MonoBehaviour
 {
     [SerializeField] protected float life;
 
-    [SerializeField] protected Roll.rollType rollType;
+    [field : SerializeField]
+    public Roll.rollType RollType { get; set; }
 
     protected bool isFlying;
 
@@ -43,7 +44,7 @@ public class RollGen : MonoBehaviour
     {
         if (collision.CompareTag("Enemy"))
         {
-            collision.GetComponent<EnemyHealth>().TakeDamage();
+            collision.GetComponent<IDamageable>().TakeDamage();
         }
     }
 }
