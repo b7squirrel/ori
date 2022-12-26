@@ -16,5 +16,5 @@ MonoBehaviour:
   panCaptureCoolTime: 0.4
   whatIsCapturable:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 896
   flavourLife: 5

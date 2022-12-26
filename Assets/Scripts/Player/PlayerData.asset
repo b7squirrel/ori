@@ -22,5 +22,5 @@ MonoBehaviour:
   groundCheckRadius: 0.1
   whatIsGround:
     serializedVersion: 2
-    m_Bits: 9
+    m_Bits: 393
   defaultGravityScale: 5
