@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PanInputHandler : MonoBehaviour
 {
@@ -12,17 +13,23 @@ public class PanInputHandler : MonoBehaviour
     void Update()
     {
         CheckCaptureInputHoldTime();
-        Capture();
         CheckHitRollInputHoldTime();
-        HitRoll();
     }
-
-    public void Capture()
+    
+    public void OnCaptureInput(InputAction.CallbackContext context)
     {
-        if (Input.GetMouseButtonDown(0))
+        if (context.started)
         {
             CaptureInput = true;
             captureInputStartTime = Time.time;
+        }
+    }
+    public void OnHitRollInput(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            HitRollInput = true;
+            hitRollInputStartTime = Time.time;
         }
     }
     public void CheckCaptureInputHoldTime()
@@ -32,16 +39,6 @@ public class PanInputHandler : MonoBehaviour
             CaptureInput = false;
         }
     }
-
-    public void HitRoll()
-    {
-        if (Input.GetMouseButton(1))
-        {
-            HitRollInput = true;
-            hitRollInputStartTime = Time.time;
-        }
-    }
-
     public void CheckHitRollInputHoldTime()
     {
         if (Time.time > hitRollInputStartTime + inputHoldTime)

@@ -1,23 +1,19 @@
 using UnityEngine.SceneManagement;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class GameManager : MonoBehaviour
 {
-    void Update()
+    public void OnQuitGame(InputAction.CallbackContext context)
     {
-        QuitGame();
-        ReloadGame();
-    }
-    public void QuitGame()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (context.started)
         {
             Application.Quit();
         }
     }
-    public void ReloadGame()
+    public void OnReloadGame(InputAction.CallbackContext context)
     {
-        if (Input.GetKeyDown(KeyCode.R))
+        if (context.started)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerInputHandler : MonoBehaviour
 {
@@ -15,28 +16,28 @@ public class PlayerInputHandler : MonoBehaviour
     {
         CheckJumpInputHoldTime();
         CheckDashInputHoldTime();
-        GetMovementInput();
-        Jump();
-        Dash();
     }
-    void GetMovementInput()
+    
+    public void OnMovementInput(InputAction.CallbackContext context)
     {
-        MovementInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        MovementInput = context.ReadValue<Vector2>();
     }
-    public void Jump()
+        public void OnJumpInput(InputAction.CallbackContext context)
     {
-        if (Input.GetKeyDown(KeyCode.W))
+        if (context.started)
         {
             JumpInput = true;
             jumpInputStartTime = Time.time;
         }
     }
-    public void Dash()
+    public void OnDashInput(InputAction.CallbackContext context)
     {
-        if (Input.GetKeyDown(KeyCode.S) && MovementInput.x != 0)
+        if (context.started)
         {
-        DashInput = true;
-        dashInputStartTime = Time.time;
+            if (MovementInput.x == 0)
+                return;
+            DashInput = true;
+            dashInputStartTime = Time.time;
         }
     }
     public void UseJumpInput() => JumpInput = false;

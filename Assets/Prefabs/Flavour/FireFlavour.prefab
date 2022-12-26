@@ -10,8 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3802319999157622892}
   - component: {fileID: 1225677469775893698}
-  - component: {fileID: 7312384311076886727}
-  - component: {fileID: -2137608981595763953}
   m_Layer: 0
   m_Name: FireFlavour
   m_TagString: Untagged
@@ -86,28 +84,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7312384311076886727
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4200844720415493156}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d6074a4f5ebf644db43cf7156f3f78d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <FlavourType>k__BackingField: 1
---- !u!114 &-2137608981595763953
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4200844720415493156}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 136daa6109ef640408173441cee47054, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

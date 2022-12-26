@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerMouseDirection : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class PlayerMouseDirection : MonoBehaviour
     private void Update()
     {
         //Vector2 mousePoint = Mouse.current.position.ReadValue();
-        Vector2 mousePoint = Input.mousePosition;
+        Vector2 mousePoint = Mouse.current.position.ReadValue();
 
         Vector2 attackPoint = mainCamera.WorldToScreenPoint(mouseDirection.position);
 
