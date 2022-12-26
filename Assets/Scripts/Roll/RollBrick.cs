@@ -32,11 +32,14 @@ public class RollBrick : RollGen, IPhysics, IRollAction
         Vector2 velocity = RecipeRoll.instance.GetRollSo(GetComponent<RollHealth>().RollType).velocity;
         rb.AddForce(new Vector2(velocity.x * xDir, velocity.y), ForceMode2D.Impulse);
     }
-
     #endregion
 
     public void RollAction()
     {
-        Debug.Log("Æø¹ß");
+        IFlavourAction flavourAction = GetComponentInChildren<IFlavourAction>();
+        if (flavourAction != null)
+        {
+            flavourAction.FlavourAction();
+        }
     }
 }
