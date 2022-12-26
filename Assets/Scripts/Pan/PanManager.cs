@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,9 +12,11 @@ public class PanManager : MonoBehaviour
 
     [SerializeField] Transform captureSlot;
     [SerializeField] PanSlot[] panSlots;
+    [SerializeField] PanData pandata;
     Flavour.flavourType flavourType;
     List<GameObject> flavours = new List<GameObject>();
     bool isFlavoured;
+    Coroutine flavourLifeCo;
 
     [Header("Debug")]
     [SerializeField] bool[] isEmpty = new bool[3];
@@ -35,6 +38,7 @@ public class PanManager : MonoBehaviour
 
     void Update()
     {
+        
         GetFlavourFollowingRoll();
         DebugSlot();
     }
@@ -71,6 +75,7 @@ public class PanManager : MonoBehaviour
 
         DestroyFlavourPrefab();
         CreateFlavourPrefab(flavourType);
+        CheckFlavourLife();
     }
     #endregion
 
@@ -198,6 +203,17 @@ public class PanManager : MonoBehaviour
             }
         }
         NumberOfRolls = panSlots.Length;
+    }
+    void CheckFlavourLife()
+    {
+        StartCoroutine(CheckFlavourLifeCo());
+    }
+    IEnumerator CheckFlavourLifeCo()
+    {
+        yield return new WaitForSeconds(pandata.flavourLife);
+        isFlavoured = false;
+        DestroyFlavourPrefab();
+        Debug.Log("Destroyed flavour Prefabs");
     }
     void DebugSlot()
     {

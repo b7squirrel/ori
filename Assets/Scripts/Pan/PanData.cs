@@ -7,4 +7,7 @@ public class PanData : ScriptableObject
     public float panCaptureTime;
     public float panCaptureCoolTime;
     public LayerMask whatIsCapturable;
+
+    [Header("Flavour")]
+    public float flavourLife;
 }
