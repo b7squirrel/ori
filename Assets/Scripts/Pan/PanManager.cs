@@ -52,6 +52,11 @@ public class PanManager : MonoBehaviour
         panSlots[0].AddRoll(_roll.transform);
 
         UpdateSlots();
+        if (isFlavoured)
+        {
+            DestroyFlavourPrefab();
+            CreateFlavourPrefab(flavourType);
+        }
     }
     public void AcquireFlavour(Flavour.flavourType flavourType)
     {
