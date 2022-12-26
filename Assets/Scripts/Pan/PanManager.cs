@@ -106,11 +106,15 @@ public class PanManager : MonoBehaviour
 
     public void ReleaseRoll()
     {
-        flavours[0].GetChild(0).transform.SetParent(panSlots[0].GetRoll().transform);
+        DestroyFlavourPrefab();
+
+        Transform roll = panSlots[0].transform;
+        FlavourSo flavourSo = GetFlavourSo(this.flavourType);
+        GameObject flavourPrefab = Instantiate(flavourSo.flavourPrefab, roll.position, roll.rotation);
+        flavourPrefab.transform.SetParent(panSlots[0].GetRoll().transform);
         panSlots[0].ReleaseRoll();
         PullRolls();
 
-        DestroyFlavourPrefab();
         CreateFlavourPrefab(flavourType);
     }
 
@@ -119,6 +123,7 @@ public class PanManager : MonoBehaviour
         this.flavourType = flavourType;
 
         FlavourSo flavourSo = GetFlavourSo(flavourType);
+
         for (int i = 0; i < panSlots.Length; i++)
         {
             if (panSlots[i].IsEmpty == false)
