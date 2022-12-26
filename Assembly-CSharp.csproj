@@ -101,11 +101,14 @@
     <Compile Include="Assets\Scripts\Enemy\IDamageable.cs" />
     <Compile Include="Assets\Scripts\Roll\BaseSetting\FlavourSo.cs" />
     <Compile Include="Assets\Scripts\Roll\BaseSetting\Flavour.cs" />
-    <Compile Include="Assets\Scripts\Enemy\ProjectileHealth.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Projectile.cs" />
     <Compile Include="Assets\Scripts\Roll\BaseSetting\RecipeFlavour.cs" />
     <Compile Include="Assets\Scripts\Roll\IFlavourAction.cs" />
     <Compile Include="Assets\Scripts\Roll\IRollAction.cs" />
     <Compile Include="Assets\Scripts\Roll\RollHealth.cs" />
+    <Compile Include="Assets\Scripts\Roll\FlavourFire.cs" />
+    <Compile Include="Assets\Scripts\Roll\FlavourGen.cs" />
+    <Compile Include="Assets\Scripts\Roll\FlavourHealth.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

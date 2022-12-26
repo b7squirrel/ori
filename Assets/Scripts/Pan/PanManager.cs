@@ -15,6 +15,7 @@ public class PanManager : MonoBehaviour
     [SerializeField] PanData pandata;
     Flavour.flavourType flavourType;
     List<GameObject> flavours = new List<GameObject>();
+    float flavourStartTime;
     bool isFlavoured;
     Coroutine flavourLifeCo;
 
@@ -77,7 +78,7 @@ public class PanManager : MonoBehaviour
         CreateFlavourPrefab(flavourType);
         if (flavourLifeCo != null)
             StopCoroutine(flavourLifeCo);
-        CheckFlavourLife();
+        StartFlavourLife();
     }
     #endregion
 
@@ -125,6 +126,21 @@ public class PanManager : MonoBehaviour
         FlavourSo flavourSo = GetFlavourSo(this.flavourType);
         GameObject flavourPrefab = Instantiate(flavourSo.flavourPrefab, roll.position, roll.rotation);
         flavourPrefab.transform.SetParent(panSlots[0].GetRoll().transform);
+
+        float remainingLife = Time.time - flavourStartTime;
+        if (remainingLife > pandata.flavourLife)
+        {
+            FlavourGen _flavourGen = flavourPrefab.GetComponent<FlavourGen>();
+
+            if (_flavourGen != null)
+            {
+                _flavourGen.IsFlying = true;
+                _flavourGen.gameObject.layer = LayerMask.NameToLayer("Capturable");
+
+                _flavourGen.FlavourLife = remainingLife;
+            }
+        }
+
         panSlots[0].ReleaseRoll();
         PullRolls();
 
@@ -206,12 +222,13 @@ public class PanManager : MonoBehaviour
         }
         NumberOfRolls = panSlots.Length;
     }
-    void CheckFlavourLife()
+    void StartFlavourLife()
     {
-        flavourLifeCo = StartCoroutine(CheckFlavourLifeCo());
+        flavourLifeCo = StartCoroutine(StartFlavourLifeCo());
     }
-    IEnumerator CheckFlavourLifeCo()
+    IEnumerator StartFlavourLifeCo()
     {
+        flavourStartTime = Time.time;
         yield return new WaitForSeconds(pandata.flavourLife);
         isFlavoured = false;
         flavourType = Flavour.flavourType.none;

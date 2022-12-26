@@ -11,6 +11,6 @@ public class EnemyHealth : MonoBehaviour, ICapturable, IDamageable
     }
     public void TakeDamage()
     {
-        Debug.Log("Take Damage");
+
     }
 }

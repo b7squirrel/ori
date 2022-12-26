@@ -11,7 +11,6 @@ public class PanCapturedRollState : PanCapturedState
     public override void Enter()
     {
         base.Enter();
-        Debug.Log("Captured Roll");
     }
 
     public override void Exit()

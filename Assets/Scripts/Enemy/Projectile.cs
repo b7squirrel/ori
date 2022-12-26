@@ -1,8 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class ProjectileHealth : MonoBehaviour, ICapturable
+/// <summary>
+/// 캡쳐 가능한 Projectile 기능 구현
+/// </summary>
+public class Projectile : MonoBehaviour, ICapturable
 {
     [SerializeField] Flavour.flavourType flavourType;
     public void GetCaptured()
