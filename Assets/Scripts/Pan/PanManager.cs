@@ -75,6 +75,8 @@ public class PanManager : MonoBehaviour
 
         DestroyFlavourPrefab();
         CreateFlavourPrefab(flavourType);
+        if (flavourLifeCo != null)
+            StopCoroutine(flavourLifeCo);
         CheckFlavourLife();
     }
     #endregion
@@ -206,7 +208,7 @@ public class PanManager : MonoBehaviour
     }
     void CheckFlavourLife()
     {
-        StartCoroutine(CheckFlavourLifeCo());
+        flavourLifeCo = StartCoroutine(CheckFlavourLifeCo());
     }
     IEnumerator CheckFlavourLifeCo()
     {

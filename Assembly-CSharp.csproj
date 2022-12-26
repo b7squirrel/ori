@@ -103,6 +103,8 @@
     <Compile Include="Assets\Scripts\Roll\BaseSetting\Flavour.cs" />
     <Compile Include="Assets\Scripts\Enemy\ProjectileHealth.cs" />
     <Compile Include="Assets\Scripts\Roll\BaseSetting\RecipeFlavour.cs" />
+    <Compile Include="Assets\Scripts\Roll\IFlavourAction.cs" />
+    <Compile Include="Assets\Scripts\Roll\IRollAction.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
