@@ -4,17 +4,19 @@ public class PanManager : MonoBehaviour
 {
     public static PanManager instance;
 
-    [SerializeField] Transform captureSlot;
 
     [field: SerializeField]
     public int NumberOfRolls { get; private set; } = 0;
 
+    [SerializeField] Transform captureSlot;
     [SerializeField] PanSlot[] panSlots;
+    Flavour.flavourType flavourType;
+    Transform[] flavours = new Transform[3];
+    bool isFlavoured;
 
     [Header("Debug")]
     [SerializeField] bool[] isEmpty = new bool[3];
 
-    Flavour.flavourType flavourType;
 
     #region Unity CallBack Functions
     void Awake()
@@ -26,10 +28,13 @@ public class PanManager : MonoBehaviour
     {
         InitPanSlots();
         captureSlot = panSlots[0].transform;
+        flavourType = Flavour.flavourType.none;
+        InitFlavourPrefab();
     }
 
     void Update()
     {
+        GetFlavourFollowingRoll();
         DebugSlot();
     }
     #endregion
@@ -49,15 +54,17 @@ public class PanManager : MonoBehaviour
     }
     public void AcquireFlavour(Flavour.flavourType flavourType)
     {
-        this.flavourType = flavourType;
-
-        FlavourSo flavourSo = RecipeFlavour.instance.GetFlavourSo(flavourType);
-        foreach (var item in panSlots)
+        foreach (var item in panSlots) // isFlavoured 가능. 적어도 하나의 슬롯이 비어 있지 않다면
         {
-            Transform targetTransform = item.transform;
-            GameObject _flavour = Instantiate(flavourSo.flavourPrefab, targetTransform.position, targetTransform.rotation);
-            _flavour.transform.SetParent(targetTransform);
+            if (!item.IsEmpty) 
+                isFlavoured = true;
         }
+
+        if (!isFlavoured) // 슬롯이 다 비어 있다면 Flavoured 될 수 없다.
+            return;
+
+        DestroyFlavourPrefab();
+        CreateFlavourPrefab(flavourType);
     }
     #endregion
 
@@ -99,8 +106,69 @@ public class PanManager : MonoBehaviour
 
     public void ReleaseRoll()
     {
+        flavours[0].GetChild(0).transform.SetParent(panSlots[0].GetRoll().transform);
         panSlots[0].ReleaseRoll();
         PullRolls();
+
+        DestroyFlavourPrefab();
+        CreateFlavourPrefab(flavourType);
+    }
+
+    void CreateFlavourPrefab(Flavour.flavourType flavourType)
+    {
+        this.flavourType = flavourType;
+
+        FlavourSo flavourSo = GetFlavourSo(flavourType);
+        for (int i = 0; i < panSlots.Length; i++)
+        {
+            if (panSlots[i].IsEmpty == false)
+            {
+                Transform targetTransform = panSlots[i].transform;
+                GameObject flavourPrefab = Instantiate(flavourSo.flavourPrefab, targetTransform.position, targetTransform.rotation);
+                flavourPrefab.transform.SetParent(flavours[i].transform);
+            }
+        }
+    }
+    void GetFlavourFollowingRoll()
+    {
+        for (int i = 0; i < panSlots.Length; i++)
+        {
+            if (panSlots[i].IsEmpty == false)
+                flavours[i].position = panSlots[i].transform.position;
+        }
+    }
+    void DestroyFlavourPrefab()
+    {
+        for (int i = 0; i < panSlots.Length; i++)
+        {
+            if (flavours[i].GetChild(0) != null)
+            {
+                //flavours[i].GetChild(0).transform.SetParent(null);
+                //Destroy(flavours[i].GetChild(0));
+                Debug.Log(flavours[i].GetChild(0).name);
+            }
+        }
+    }
+    void InitFlavourPrefab()
+    {
+        for (int i = 0; i < flavours.Length; i++)
+        {
+            flavours[i] = panSlots[i].transform;
+        }
+        
+        flavourType = Flavour.flavourType.none;
+        FlavourSo flavourSo = GetFlavourSo(flavourType);
+
+        for (int i = 0; i < panSlots.Length; i++)
+        {
+            Transform targetTransform = panSlots[i].transform;
+            GameObject flavourPrefab = Instantiate(flavourSo.flavourPrefab, targetTransform.position, targetTransform.rotation);
+            flavourPrefab.transform.SetParent(flavours[i]);
+        }
+    }
+    FlavourSo GetFlavourSo(Flavour.flavourType flavourType)
+    {
+        return RecipeFlavour.instance.GetFlavourSo(flavourType);
     }
     #endregion
 
@@ -114,7 +182,6 @@ public class PanManager : MonoBehaviour
     {
         for (int i = 0; i < panSlots.Length; i++)
         {
-            Debug.Log("slot[0] is " + panSlots[0].IsEmpty);
             if (panSlots[i].IsEmpty == false)
             {
                 panSlots[i].GetRoll().GetComponent<SpriteRenderer>().sortingOrder = panSlots.Length - i;
