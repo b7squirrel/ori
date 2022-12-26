@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PanManager : MonoBehaviour
@@ -11,7 +12,7 @@ public class PanManager : MonoBehaviour
     [SerializeField] Transform captureSlot;
     [SerializeField] PanSlot[] panSlots;
     Flavour.flavourType flavourType;
-    Transform[] flavours = new Transform[3];
+    List<GameObject> flavours = new List<GameObject>();
     bool isFlavoured;
 
     [Header("Debug")]
@@ -130,46 +131,34 @@ public class PanManager : MonoBehaviour
             {
                 Transform targetTransform = panSlots[i].transform;
                 GameObject flavourPrefab = Instantiate(flavourSo.flavourPrefab, targetTransform.position, targetTransform.rotation);
-                flavourPrefab.transform.SetParent(flavours[i].transform);
+                flavours.Add(flavourPrefab);
             }
         }
     }
     void GetFlavourFollowingRoll()
     {
-        for (int i = 0; i < panSlots.Length; i++)
+        for (int i = 0; i < flavours.Count; i++)
         {
-            if (panSlots[i].IsEmpty == false)
-                flavours[i].position = panSlots[i].transform.position;
+            flavours[i].transform.position = panSlots[i].transform.position;
         }
     }
     void DestroyFlavourPrefab()
     {
-        for (int i = 0; i < panSlots.Length; i++)
+        GameObject[] flavourTemp = new GameObject[flavours.Count];
+        for (int i = 0; i < flavourTemp.Length; i++)
         {
-            if (flavours[i].GetChild(0) != null)
-            {
-                //flavours[i].GetChild(0).transform.SetParent(null);
-                //Destroy(flavours[i].GetChild(0));
-                Debug.Log(flavours[i].GetChild(0).name);
-            }
+            flavourTemp[i] = flavours[i];
+        }
+        flavours.Clear();
+        foreach (var item in flavourTemp)
+        {
+            Destroy(item);
         }
     }
     void InitFlavourPrefab()
     {
-        for (int i = 0; i < flavours.Length; i++)
-        {
-            flavours[i] = panSlots[i].transform;
-        }
-        
         flavourType = Flavour.flavourType.none;
         FlavourSo flavourSo = GetFlavourSo(flavourType);
-
-        for (int i = 0; i < panSlots.Length; i++)
-        {
-            Transform targetTransform = panSlots[i].transform;
-            GameObject flavourPrefab = Instantiate(flavourSo.flavourPrefab, targetTransform.position, targetTransform.rotation);
-            flavourPrefab.transform.SetParent(flavours[i]);
-        }
     }
     FlavourSo GetFlavourSo(Flavour.flavourType flavourType)
     {
