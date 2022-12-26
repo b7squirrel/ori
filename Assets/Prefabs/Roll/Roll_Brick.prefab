@@ -98,8 +98,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4671fc6a44f8d0a4980c7dabd42f9f5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 4
-  <RollType>k__BackingField: 1
 --- !u!114 &56034497188748575
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112,3 +110,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfae7b85be4cd31448e9d63ade8a0cf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <RollType>k__BackingField: 1
+  lifeTime: 5

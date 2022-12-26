@@ -126,20 +126,7 @@ public class PanManager : MonoBehaviour
         FlavourSo flavourSo = GetFlavourSo(this.flavourType);
         GameObject flavourPrefab = Instantiate(flavourSo.flavourPrefab, roll.position, roll.rotation);
         flavourPrefab.transform.SetParent(panSlots[0].GetRoll().transform);
-
-        float remainingLife = Time.time - flavourStartTime;
-        if (remainingLife > pandata.flavourLife)
-        {
-            FlavourGen _flavourGen = flavourPrefab.GetComponent<FlavourGen>();
-
-            if (_flavourGen != null)
-            {
-                _flavourGen.IsFlying = true;
-                _flavourGen.gameObject.layer = LayerMask.NameToLayer("Capturable");
-
-                _flavourGen.FlavourLife = remainingLife;
-            }
-        }
+        panSlots[0].GetRoll().GetComponent<RollHealth>().FlavourType = this.flavourType;
 
         panSlots[0].ReleaseRoll();
         PullRolls();
@@ -222,6 +209,18 @@ public class PanManager : MonoBehaviour
         }
         NumberOfRolls = panSlots.Length;
     }
+
+
+    void DebugSlot()
+    {
+        for (int i = 0; i < isEmpty.Length; i++)
+        {
+            isEmpty[i] = panSlots[i].IsEmpty;
+        }
+    }
+    #endregion
+
+    #region Count Flavour Life
     void StartFlavourLife()
     {
         flavourLifeCo = StartCoroutine(StartFlavourLifeCo());
@@ -233,13 +232,6 @@ public class PanManager : MonoBehaviour
         isFlavoured = false;
         flavourType = Flavour.flavourType.none;
         DestroyFlavourPrefab();
-    }
-    void DebugSlot()
-    {
-        for (int i = 0; i < isEmpty.Length; i++)
-        {
-            isEmpty[i] = panSlots[i].IsEmpty;
-        }
     }
     #endregion
 }

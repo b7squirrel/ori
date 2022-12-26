@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 /// <summary>
@@ -6,6 +7,7 @@ using UnityEngine;
 public class Projectile : MonoBehaviour, ICapturable
 {
     [SerializeField] Flavour.flavourType flavourType;
+
     public void GetCaptured()
     {
         PanManager.instance.AcquireFlavour(flavourType);
