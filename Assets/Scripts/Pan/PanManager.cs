@@ -10,6 +10,8 @@ public class PanManager : MonoBehaviour
     public int NumberOfRolls { get; private set; } = 0;
 
     [SerializeField] PanSlot[] panSlots;
+
+    [Header("Debug")]
     [SerializeField] bool[] isEmpty = new bool[3];
 
     Flavour.flavourType flavourType;
@@ -28,10 +30,7 @@ public class PanManager : MonoBehaviour
 
     void Update()
     {
-        for (int i = 0; i < isEmpty.Length; i++)
-        {
-            isEmpty[i] = panSlots[i].IsEmpty;
-        }
+        DebugSlot();
     }
     #endregion
 
@@ -46,7 +45,7 @@ public class PanManager : MonoBehaviour
         GameObject _roll = Instantiate(rollSo.rollPrefab, captureSlot.position, captureSlot.rotation);
         panSlots[0].AddRoll(_roll.transform);
 
-        CountRolls();
+        UpdateSlots();
     }
     public void AcquireFlavour(Flavour.flavourType flavourType)
     {
@@ -115,6 +114,7 @@ public class PanManager : MonoBehaviour
     {
         for (int i = 0; i < panSlots.Length; i++)
         {
+            Debug.Log("slot[0] is " + panSlots[0].IsEmpty);
             if (panSlots[i].IsEmpty == false)
             {
                 panSlots[i].GetRoll().GetComponent<SpriteRenderer>().sortingOrder = panSlots.Length - i;
@@ -132,6 +132,13 @@ public class PanManager : MonoBehaviour
             }
         }
         NumberOfRolls = panSlots.Length;
+    }
+    void DebugSlot()
+    {
+        for (int i = 0; i < isEmpty.Length; i++)
+        {
+            isEmpty[i] = panSlots[i].IsEmpty;
+        }
     }
     #endregion
 }

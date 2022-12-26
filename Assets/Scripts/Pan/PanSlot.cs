@@ -3,7 +3,7 @@ using UnityEngine;
 public class PanSlot : MonoBehaviour
 {
     public bool IsEmpty { get; private set; } = true;
-    
+
     public void AddRoll(Transform roll)
     {
         roll.SetPositionAndRotation(transform.position, transform.rotation);
