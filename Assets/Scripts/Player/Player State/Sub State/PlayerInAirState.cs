@@ -34,7 +34,6 @@ public class PlayerInAirState : PlayerState
         xInput = (int)player.InputHandler.MovementInput.x;
         jumpInput = player.InputHandler.JumpInput;
         dashInput = player.InputHandler.DashInput;
-
         if (isGrounded && player.CurrentVelocity.y < 0)
         {
             stateMachine.ChangeState(player.LandState);

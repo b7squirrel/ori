@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerJumpState : PlayerAbilityState
 {
     int amountOfJumpsLeft;
+    Vector2 input;
+
     public PlayerJumpState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(player, stateMachine, playerData, animBoolName)
     {
         amountOfJumpsLeft = playerData.amountOfJumps;

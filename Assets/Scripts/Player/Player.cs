@@ -34,6 +34,7 @@ public class Player : MonoBehaviour
     public int FacingDirection { get; private set; }
 
     public PlayerMouseDirection PlayerMouseDirection { get; private set; }
+
     #endregion
 
     #region Unity CallBack Functions
