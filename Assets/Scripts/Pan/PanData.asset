@@ -17,4 +17,5 @@ MonoBehaviour:
   whatIsCapturable:
     serializedVersion: 2
     m_Bits: 896
+  hitRollSpark: {fileID: 4802426962950125333, guid: 7f60f29eaf1ddd447a27c1a4a70b9503, type: 3}
   flavourLife: 5

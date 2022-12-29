@@ -8,6 +8,9 @@ public class PanData : ScriptableObject
     public float panCaptureCoolTime;
     public LayerMask whatIsCapturable;
 
+    [Header("Hit Roll")]
+    public GameObject hitRollSpark;
+
     [Header("Flavour")]
     public float flavourLife;
 }

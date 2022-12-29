@@ -6,7 +6,6 @@ public class PanManager : MonoBehaviour
 {
     public static PanManager instance;
 
-
     [field: SerializeField]
     public int NumberOfRolls { get; private set; } = 0;
 
@@ -18,6 +17,8 @@ public class PanManager : MonoBehaviour
     float flavourStartTime;
     bool isFlavoured;
     Coroutine flavourLifeCo;
+
+    [SerializeField] Transform hitRollPoint;
 
     [Header("Debug")]
     [SerializeField] bool[] isEmpty = new bool[3];
@@ -132,10 +133,17 @@ public class PanManager : MonoBehaviour
         rollHealth.CountLife();
         rollHealth.FlavourType = this.flavourType;
 
+        panSlots[0].GetRoll().transform.position = hitRollPoint.position;
         panSlots[0].ReleaseRoll();
         PullRolls();
 
         CreateFlavourPrefab(flavourType);
+
+        HitRollEffect();
+    }
+    void HitRollEffect()
+    {
+        Instantiate(pandata.hitRollSpark, hitRollPoint.position, hitRollPoint.rotation);
     }
 
     void CreateFlavourPrefab(Flavour.flavourType flavourType)
