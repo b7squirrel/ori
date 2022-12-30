@@ -69,6 +69,7 @@
     <Compile Include="Assets\Scripts\Pan\PanStates\PanCapturedRollState.cs" />
     <Compile Include="Assets\Scripts\Pan\PanState.cs" />
     <Compile Include="Assets\Scripts\Enemy\IDamageable.cs" />
+    <Compile Include="Assets\Scripts\Managers\Destroy.cs" />
     <Compile Include="Assets\Scripts\Roll\BaseSetting\Flavour.cs" />
     <Compile Include="Assets\Scripts\Roll\BaseSetting\RollSo.cs" />
     <Compile Include="Assets\Scripts\Roll\IFlavourAction.cs" />
@@ -107,7 +108,6 @@
     <Compile Include="Assets\Scripts\Enemy\EnemyHealth.cs" />
     <Compile Include="Assets\Scripts\Pan\PanSlot.cs" />
     <Compile Include="Assets\Scripts\Player\Player State\Sub State\PlayerIdleState.cs" />
-    <Compile Include="Assets\Scripts\Managers\Destroy.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

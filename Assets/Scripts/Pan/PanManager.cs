@@ -14,7 +14,6 @@ public class PanManager : MonoBehaviour
     [SerializeField] PanData pandata;
     Flavour.flavourType flavourType;
     List<GameObject> flavours = new List<GameObject>();
-    float flavourStartTime;
     bool isFlavoured;
     Coroutine flavourLifeCo;
 
@@ -239,7 +238,6 @@ public class PanManager : MonoBehaviour
     }
     IEnumerator StartFlavourLifeCo()
     {
-        flavourStartTime = Time.time;
         yield return new WaitForSeconds(pandata.flavourLife);
         isFlavoured = false;
         flavourType = Flavour.flavourType.none;

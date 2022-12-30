@@ -12,12 +12,14 @@ public class RollHealth : MonoBehaviour, ICapturable
 
     [SerializeField] protected float lifeTime;
 
+    bool isCaptured; // 중복으로 캡쳐되지 않도록
+
     public void CountLife()
     {
         StartCoroutine(CountLifeCo());
     }
 
-    public IEnumerator CountLifeCo()
+    IEnumerator CountLifeCo()
     {
         yield return new WaitForSeconds(lifeTime);
         GetComponent<IRollAction>().RollAction();
@@ -26,11 +28,15 @@ public class RollHealth : MonoBehaviour, ICapturable
 
     public void GetCaptured()
     {
+        if (isCaptured)
+            return;
+
         PanManager.instance.AcquireRoll(RollType);
         if (FlavourType != Flavour.flavourType.none)
         {
             PanManager.instance.AcquireFlavour(FlavourType);
         }
+        isCaptured = true;
         Destroy(gameObject);
     }
 }

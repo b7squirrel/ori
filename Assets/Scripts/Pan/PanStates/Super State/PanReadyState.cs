@@ -1,30 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 public class PanReadyState : PanState
 {
     bool captureInput;
     bool hitRollInput;
 
+    #region Constructor
     public PanReadyState(Pan pan, PanStateMachine stateMachine, PanData panData, string animBoolName) : base(pan, stateMachine, panData, animBoolName)
     {
     }
-
-    public override void DoChecks()
-    {
-        base.DoChecks();
-    }
-
-    public override void Enter()
-    {
-        base.Enter();
-    }
-
-    public override void Exit()
-    {
-        base.Exit();
-    }
+    #endregion
 
     public override void LogicUpdate()
     {

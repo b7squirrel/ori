@@ -4,11 +4,13 @@ public class PanCaptureAnticState : PanState
 {
     float lastCaptureTime;
     float captureTimeLeft;
-
     bool capturedRoll;
+
+    #region Constructor
     public PanCaptureAnticState(Pan pan, PanStateMachine stateMachine, PanData panData, string animBoolName) : base(pan, stateMachine, panData, animBoolName)
     {
     }
+    #endregion
 
     // 시간 체크해서 애니메이션 끝나면 무조건 CapturedNone이나 CapturedRoll로 가도록
     public override void Enter()
@@ -17,11 +19,6 @@ public class PanCaptureAnticState : PanState
         lastCaptureTime = Time.time;
         captureTimeLeft = pandata.panCaptureTime;
         DetectCapturable();
-    }
-
-    public override void Exit()
-    {
-        base.Exit();
     }
 
     public override void LogicUpdate()
@@ -49,11 +46,15 @@ public class PanCaptureAnticState : PanState
 
     void DetectCapturable()
     {
-        Collider2D hit = Physics2D.OverlapCircle(pan.capturePoint.position, 1f, pandata.whatIsCapturable);
+        Collider2D[] hit = Physics2D.OverlapBoxAll(pan.capturePoint.position, new Vector2(2.5f, 1.3f), 0f, pandata.whatIsCapturable);
         if (hit != null)
         {
+            foreach (var item in hit)
+            {
+                item.gameObject.GetComponent<ICapturable>().GetCaptured();
+            }
+
             capturedRoll = true;
-            hit.gameObject.GetComponent<ICapturable>().GetCaptured();
         }
         else
         {
