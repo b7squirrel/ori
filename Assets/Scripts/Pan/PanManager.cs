@@ -19,6 +19,11 @@ public class PanManager : MonoBehaviour
 
     [SerializeField] Transform hitRollPoint;
 
+    [Header("Effects")]
+    [SerializeField] Material whiteMat;
+    [SerializeField] float whiteFlashDuration;
+    SpriteRenderer[] rollSR = new SpriteRenderer[3];
+
     [Header("Debug")]
     [SerializeField] bool[] isEmpty = new bool[3];
 
@@ -133,16 +138,13 @@ public class PanManager : MonoBehaviour
         rollHealth.FlavourType = this.flavourType;
 
         panSlots[0].GetRoll().transform.position = hitRollPoint.position;
+        panSlots[0].GetRoll().GetComponent<IRollEffect>().WhiteFlash(0f); // white flash
         panSlots[0].ReleaseRoll();
         PullRolls();
 
         CreateFlavourPrefab(flavourType);
 
         HitRollEffect();
-    }
-    void HitRollEffect()
-    {
-        Instantiate(pandata.hitRollSpark, hitRollPoint.position, hitRollPoint.rotation);
     }
 
     void CreateFlavourPrefab(Flavour.flavourType flavourType)
@@ -242,6 +244,13 @@ public class PanManager : MonoBehaviour
         isFlavoured = false;
         flavourType = Flavour.flavourType.none;
         DestroyFlavourPrefab();
+    }
+    #endregion
+
+    #region Effects
+    void HitRollEffect()
+    {
+        Instantiate(pandata.hitRollSpark, hitRollPoint.position, hitRollPoint.rotation);
     }
     #endregion
 }

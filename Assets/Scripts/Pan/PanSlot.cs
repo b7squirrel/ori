@@ -38,11 +38,15 @@ public class PanSlot : MonoBehaviour
         RemoveRoll();
         targetSlot.AddRoll(roll.transform);
     }
+    /// <summary>
+    /// IPhysics 입히고, 날아갈 방향 설정, layerMask를 Roll로 설정(롤은 생성되면 캡쳐할 때 인식되지 않도록 "Captured"로 설정됨)
+    /// </summary>
     public void ReleaseRoll()
     {
         Pan pan = GetComponentInParent<Pan>();
         float xDir = pan.GetComponentInParent<PlayerMouseDirection>().GetMouseHorizontalDirection();
         GetRoll().GetComponent<IPhysics>().AddHitRollPhysics(xDir);
+        GetRoll().layer = LayerMask.NameToLayer("Roll"); 
         RemoveRoll();
     }
 }

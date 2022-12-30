@@ -4,6 +4,17 @@ using UnityEngine.InputSystem;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager instance;
+
+    [Header("Effects")]
+    public Material WhiteMat;
+    public float duration;
+
+    void Awake()
+    {
+        instance = this;
+    }
+
     void Start()
     {
         Application.targetFrameRate = 60;

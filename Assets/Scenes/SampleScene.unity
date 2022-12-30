@@ -2064,10 +2064,10 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 4.75, y: 8.0625}
+  m_Size: {x: 6.875, y: 7.75}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &756974706
@@ -3703,6 +3703,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15ff40a8dbec4fe409ecbc6a7818e34c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WhiteMat: {fileID: 2100000, guid: 4ad3165809b1a8e48830dbff1702c181, type: 2}
+  duration: 0.05
 --- !u!1 &2008008409
 GameObject:
   m_ObjectHideFlags: 0
@@ -3907,6 +3909,8 @@ MonoBehaviour:
   panSlots: []
   pandata: {fileID: 11400000, guid: 44ae553ad21e22842899eb98d480cb4c, type: 2}
   hitRollPoint: {fileID: 756974707}
+  whiteMat: {fileID: 2100000, guid: 4ad3165809b1a8e48830dbff1702c181, type: 2}
+  whiteFlashDuration: 0.05
   isEmpty: 000000
 --- !u!114 &2141050012
 MonoBehaviour:
