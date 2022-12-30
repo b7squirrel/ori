@@ -49,9 +49,10 @@ public class PanCaptureAnticState : PanState
         Collider2D[] hit = Physics2D.OverlapBoxAll(pan.capturePoint.position, new Vector2(2.5f, 1.3f), 0f, pandata.whatIsCapturable);
         if (hit != null)
         {
-            foreach (var item in hit)
+            int index = Mathf.Min(hit.Length, 3);
+            for (int i = 0; i < index; i++) // 3개까지만 캡쳐가 가능하도록
             {
-                item.gameObject.GetComponent<ICapturable>().GetCaptured();
+                hit[i].gameObject.GetComponent<ICapturable>().GetCaptured();
             }
 
             capturedRoll = true;
