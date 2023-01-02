@@ -4,6 +4,6 @@ using UnityEngine;
 
 public interface IPhysics
 {
-    void AddHitRollPhysics(float xDir);
+    void AddHitRollPhysics(float mouseDir, float movementInputDir, float playerFacingDir, float playerVelocity);
     void AddDumpRollPhysics();
 }

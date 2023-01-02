@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// 비어 있는지 여부를 GetRoll로 체크하면 null일 경우 에러가 뜬다
+/// IsEmpty로 체크하면 된다
+/// </summary>
 public class PanManager : MonoBehaviour
 {
     public static PanManager instance;
@@ -27,11 +31,14 @@ public class PanManager : MonoBehaviour
     [Header("Debug")]
     [SerializeField] bool[] isEmpty = new bool[3];
 
+    [SerializeField] Player player;
+
 
     #region Unity CallBack Functions
     void Awake()
     {
         instance = this;
+        player = GetComponentInParent<Player>();
     }
 
     void Start()
@@ -44,7 +51,6 @@ public class PanManager : MonoBehaviour
 
     void Update()
     {
-        
         GetFlavourFollowingRoll();
         DebugSlot();
     }
@@ -137,9 +143,12 @@ public class PanManager : MonoBehaviour
         rollHealth.CountLife();
         rollHealth.FlavourType = this.flavourType;
 
+        float movementInputDir = player.InputHandler.MovementInput.x;
+        float playerVelocity = player.playerData.movementVelocity;
+
         panSlots[0].GetRoll().transform.position = hitRollPoint.position;
         panSlots[0].GetRoll().GetComponent<IRollEffect>().WhiteFlash(0f); // white flash
-        panSlots[0].ReleaseRoll();
+        panSlots[0].ReleaseRoll(movementInputDir, playerVelocity);
         PullRolls();
 
         CreateFlavourPrefab(flavourType);
@@ -199,6 +208,7 @@ public class PanManager : MonoBehaviour
     {
         SetSortingLayers();
         CountRolls();
+        ResetRollScale();
     }
     void SetSortingLayers()
     {
@@ -207,6 +217,17 @@ public class PanManager : MonoBehaviour
             if (panSlots[i].IsEmpty == false)
             {
                 panSlots[i].GetRoll().GetComponent<SpriteRenderer>().sortingOrder = panSlots.Length - i;
+            }
+        }
+    }
+
+    void ResetRollScale()
+    {
+        foreach (var item in panSlots)
+        {
+            if (item.IsEmpty == false)
+            {
+                item.GetRoll().transform.localScale = new Vector3(1, 1, 1);
             }
         }
     }

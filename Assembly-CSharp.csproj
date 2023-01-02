@@ -64,6 +64,7 @@
     <Compile Include="Assets\Scripts\Roll\FlavourFire.cs" />
     <Compile Include="Assets\Scripts\Pan\PanInputHandler.cs" />
     <Compile Include="Assets\Scripts\Player\Player State\Suprer State\PlayerGroundedState.cs" />
+    <Compile Include="Assets\Scripts\Pan\PanPlayerBridge.cs" />
     <Compile Include="Assets\Scripts\Roll\RollHealth.cs" />
     <Compile Include="Assets\Scripts\Player\Player State\Sub State\PlayerInAirState.cs" />
     <Compile Include="Assets\Scripts\Pan\PanStates\PanCapturedRollState.cs" />

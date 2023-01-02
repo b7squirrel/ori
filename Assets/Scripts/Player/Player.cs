@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
     public PlayerInAirState InAirState { get; private set; }
     public PlayerDashState DashState { get; private set; }
 
-    [SerializeField] PlayerData playerData;
+    public PlayerData playerData;
 
     public Pan Pan { get; private set; }
     #endregion
@@ -32,6 +32,7 @@ public class Player : MonoBehaviour
     #region Other Variables
     public Vector2 CurrentVelocity { get; private set; }
     public int FacingDirection { get; private set; }
+    public bool Flippable { get; set; } = true;
 
     public PlayerMouseDirection PlayerMouseDirection { get; private set; }
 
@@ -108,6 +109,8 @@ public class Player : MonoBehaviour
     void AnimationFinishTrigger() => StateMachine.CurrentState.AnimationFinishTrigger();
     void Flip()
     {
+        if (Flippable == false)
+            return;
         FacingDirection *= -1;
         transform.Rotate(0f, 180f, 0f);
     }

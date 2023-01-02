@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Pan : MonoBehaviour
 {
+    #region State Variables
     public PanStateMachine StateMachine { get; private set; }
     public PanIdleState IdleState { get; private set; }
     public PanCaptureAnticState CaptureAnticState { get; private set; }
@@ -12,13 +13,20 @@ public class Pan : MonoBehaviour
     public PanPanningState PanningState { get; private set; }
     public PanHitRollAnticState HitRollAnticState { get; private set; }
     public PanHitRollState HitRollState { get; private set; }
+    public PanInputHandler PanInputHandler { get; private set; }
+    [SerializeField] string currentState;
+    #endregion
 
+    #region Other Variables
     [SerializeField] PanData panData;
     public Transform capturePoint;
-    public PanInputHandler PanInputHandler { get; private set; }
-    public Animator anim;
-    [SerializeField] string currentState;
+    #endregion
 
+    #region Components
+    public Animator anim;
+    #endregion
+
+    #region Unity Callback Functions
     void Awake()
     {
         anim = GetComponent<Animator>();
@@ -44,7 +52,10 @@ public class Pan : MonoBehaviour
         StateMachine.CurrentState.LogicUpdate();
         currentState = StateMachine.CurrentState.ToString();
     }
+    #endregion
+
+    #region Other Functions
     void AnimationFinishTrigger() => StateMachine.CurrentState.AnimationFinishTrigger();
     void AniamtionCancelFlag() => StateMachine.CurrentState.AnimationCancelFlag();
-
+    #endregion
 }
