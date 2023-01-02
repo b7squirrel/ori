@@ -47,7 +47,6 @@ public class PanSlot : MonoBehaviour
         float mouseDir = pan.GetComponentInParent<PlayerMouseDirection>().GetMouseHorizontalDirection();
         float playerFacingDir = pan.GetComponentInParent<Player>().FacingDirection;
         GetRoll().GetComponent<IPhysics>().AddHitRollPhysics(mouseDir, movementInputDir, playerFacingDir, playerVelocity);
-        Debug.Log("mouseDir = " + mouseDir + "playerDir = " + movementInputDir + "player velocity = " + playerVelocity);
         GetRoll().layer = LayerMask.NameToLayer("Roll"); 
         RemoveRoll();
     }

@@ -4,7 +4,6 @@ public class PanCaptureAnticState : PanState
 {
     float lastCaptureTime;
     float captureTimeLeft;
-    bool capturedRoll;
 
     #region Constructor
     public PanCaptureAnticState(Pan pan, PanStateMachine stateMachine, PanData panData, string animBoolName) : base(pan, stateMachine, panData, animBoolName)
@@ -29,13 +28,13 @@ public class PanCaptureAnticState : PanState
             captureTimeLeft -= Time.deltaTime;
             return;
         }
-        if (capturedRoll)
-        {
-            pan.StateMachine.ChangeState(pan.CapturedRollState);
-            
-        }else
+        if (PanManager.instance.NumberOfRolls == 0)
         {
             pan.StateMachine.ChangeState(pan.CapturedNoneState);
+        }
+        else
+        {
+            pan.StateMachine.ChangeState(pan.CapturedRollState);
         }
     }
 
@@ -54,12 +53,6 @@ public class PanCaptureAnticState : PanState
             {
                 hit[i].gameObject.GetComponent<ICapturable>().GetCaptured();
             }
-
-            capturedRoll = true;
-        }
-        else
-        {
-            capturedRoll = false;
         }
     }
     void CheckWall()
